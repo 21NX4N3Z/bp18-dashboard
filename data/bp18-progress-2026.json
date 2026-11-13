@@ -1,0 +1,3649 @@
+{
+  "project": {
+    "name": "BP18",
+    "season": "TSAE 2027",
+    "competitionDate": "2027-02-02T10:00:00.000Z",
+    "targetWeight": 29.5,
+    "currentWeight": 29.537,
+    "subsystemWeights": [
+      {
+        "subsystem": "Frame",
+        "budget": 29.5,
+        "actual": 29.537
+      },
+      {
+        "subsystem": "Powertrain",
+        "budget": 54.5,
+        "actual": 0
+      },
+      {
+        "subsystem": "Electrical",
+        "budget": 13,
+        "actual": 0
+      },
+      {
+        "subsystem": "Accumulator",
+        "budget": 73,
+        "actual": 0
+      },
+      {
+        "subsystem": "Suspension",
+        "budget": 0,
+        "actual": 0
+      },
+      {
+        "subsystem": "Aero",
+        "budget": 0,
+        "actual": 0
+      }
+    ],
+    "weightHistory": [
+      {
+        "date": "2026-08-01T09:00:00.000Z",
+        "weight": 32.0,
+        "note": "BP18 Ver.1 frame"
+      },
+      {
+        "date": "2026-09-15T09:00:00.000Z",
+        "weight": 30.95,
+        "note": "BP18 Ver.2 frame"
+      },
+      {
+        "date": "2026-10-20T09:00:00.000Z",
+        "weight": 33.02,
+        "note": "BP16B (no DCP) baseline"
+      },
+      {
+        "date": "2026-11-13T09:00:00.000Z",
+        "weight": 29.537,
+        "note": "BP18 Ver.4 - decrease 3.483 kg"
+      }
+    ],
+    "materialMix": [
+      {
+        "material": "Accumulator (cells)",
+        "share": 73
+      },
+      {
+        "material": "Steel 4130 / STKM (frame)",
+        "share": 29.5
+      },
+      {
+        "material": "Aluminium 6061 / 7075",
+        "share": 12
+      },
+      {
+        "material": "Carbon fibre / prepreg",
+        "share": 8
+      },
+      {
+        "material": "Foam core (XPS / PMI)",
+        "share": 2
+      }
+    ]
+  },
+  "members": [
+    {
+      "id": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "name": "Prin",
+      "email": "",
+      "role": "engineer",
+      "position": "Frame Simulation & Aero",
+      "subsystem": "Chassis"
+    },
+    {
+      "id": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "name": "Pruk",
+      "email": "",
+      "role": "engineer",
+      "position": "Manufacturing & Frame Layout",
+      "subsystem": "Chassis"
+    },
+    {
+      "id": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "name": "Dutch",
+      "email": "",
+      "role": "engineer",
+      "position": "Suspension CNC & Brackets",
+      "subsystem": "Suspension"
+    },
+    {
+      "id": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "name": "Dave",
+      "email": "",
+      "role": "engineer",
+      "position": "Rear Wheel Drivetrain",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "d1fb1dac-1fbc-518b-a898-0e8f79096f67",
+      "name": "Ikq",
+      "email": "",
+      "role": "engineer",
+      "position": "Front Wheel Drivetrain",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "9f6038b6-73de-5c56-bdce-2d5e4d09ab84",
+      "name": "Kit",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "48c3d7fa-8c77-5463-ae59-94afef17bb27",
+      "name": "Tae",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator & Cooling",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "3f926c31-4d3b-5fb5-ade3-156a1118fca7",
+      "name": "Prob",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "132b85cc-241a-5839-9f5e-11577dc11377",
+      "name": "Pao",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "ee21512d-97dd-5af6-a3f0-89de1589463e",
+      "name": "Meow",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "815f78d9-92b3-59f9-b1e9-8031a6d7392b",
+      "name": "Wan T",
+      "email": "",
+      "role": "engineer",
+      "position": "Accumulator",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "4fb05ebd-6775-5d30-a588-3120deed78d6",
+      "name": "Jak",
+      "email": "",
+      "role": "engineer",
+      "position": "Cooling System",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "e293b019-a316-59e2-912a-5cccdf5af699",
+      "name": "Apo",
+      "email": "",
+      "role": "engineer",
+      "position": "Spacer Fardrive & Resolver Shaft",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "e5c2fd58-b7f4-5ef1-8034-ac749c672cab",
+      "name": "Y1",
+      "email": "",
+      "role": "engineer",
+      "position": "Powertrain",
+      "subsystem": "Powertrain"
+    },
+    {
+      "id": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "name": "Petch",
+      "email": "",
+      "role": "engineer",
+      "position": "BMS / Battery Pack / Wiring Harness",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "17855945-8464-54a0-abff-f39c841d1a30",
+      "name": "GunEng",
+      "email": "",
+      "role": "engineer",
+      "position": "BMS",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "e70a4f7a-ae76-5863-84aa-3cbb75646983",
+      "name": "Peem",
+      "email": "",
+      "role": "engineer",
+      "position": "BMS",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "ee9d399d-c325-5fc7-97ad-fed0988f9fa8",
+      "name": "Pat",
+      "email": "",
+      "role": "engineer",
+      "position": "BMS",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "7aec61db-7ba3-5217-b9fc-68f4c5332451",
+      "name": "Fu",
+      "email": "",
+      "role": "engineer",
+      "position": "BMS",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "name": "To",
+      "email": "",
+      "role": "engineer",
+      "position": "Wiring Harness",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "d2ab9b12-3334-5a3f-a5fe-40359978d5a4",
+      "name": "Prof. Danai",
+      "email": "",
+      "role": "viewer",
+      "position": "Wiring Harness Advisor",
+      "subsystem": "High Voltage"
+    },
+    {
+      "id": "05037d59-f9ec-5912-9ca9-240018075296",
+      "name": "CK",
+      "email": "",
+      "role": "engineer",
+      "position": "Shutdown & TSAL Control",
+      "subsystem": "Low Voltage"
+    },
+    {
+      "id": "838449c9-486f-5020-a2a8-3a7618ded530",
+      "name": "Joe",
+      "email": "",
+      "role": "engineer",
+      "position": "BSPD",
+      "subsystem": "Low Voltage"
+    },
+    {
+      "id": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "name": "Pokpong",
+      "email": "",
+      "role": "engineer",
+      "position": "VCU",
+      "subsystem": "Low Voltage"
+    },
+    {
+      "id": "d7888463-6ed2-5029-8c75-6786f4e453b0",
+      "name": "Korn",
+      "email": "",
+      "role": "engineer",
+      "position": "TSAL Light",
+      "subsystem": "Low Voltage"
+    },
+    {
+      "id": "af8cf15b-9ae0-5859-9477-fb334e855cff",
+      "name": "Gao",
+      "email": "",
+      "role": "engineer",
+      "position": "Telemetry ESP32 / CAN",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "9f221e26-c11a-55dd-8ded-d188701efbec",
+      "name": "N'Pun",
+      "email": "",
+      "role": "engineer",
+      "position": "Telemetry Display",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "name": "Toen",
+      "email": "",
+      "role": "engineer",
+      "position": "Systems / Telemetry Operator",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "5c66c866-a3ef-5a77-a726-80c0c54e3b63",
+      "name": "Jackie",
+      "email": "",
+      "role": "engineer",
+      "position": "BOM & LV",
+      "subsystem": "Low Voltage"
+    },
+    {
+      "id": "e28b2098-d8ab-5b62-b080-cc97681319fb",
+      "name": "Folk",
+      "email": "",
+      "role": "engineer",
+      "position": "CAN Bus",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "ab6970ad-87ee-5974-af4a-7b1df995aa32",
+      "name": "Lily",
+      "email": "",
+      "role": "engineer",
+      "position": "Sensor Reading",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "68cb755e-0193-5015-b121-90fa61cfa216",
+      "name": "Pooh",
+      "email": "",
+      "role": "engineer",
+      "position": "Systems (workload transfer)",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "name": "Angy",
+      "email": "",
+      "role": "admin",
+      "position": "General Management / Procurement",
+      "subsystem": "General"
+    },
+    {
+      "id": "b6db07c3-5080-5be0-8e50-9b9bfbeb5bec",
+      "name": "Yuil",
+      "email": "",
+      "role": "engineer",
+      "position": "Data Logger",
+      "subsystem": "Systems"
+    },
+    {
+      "id": "f114eb44-85e5-53f5-a078-c18852bb6cc6",
+      "name": "Ling",
+      "email": "",
+      "role": "viewer",
+      "position": "Business Plan",
+      "subsystem": "General"
+    },
+    {
+      "id": "e9a98288-7cdc-5fee-a833-07e4cb894faf",
+      "name": "P'Chamint",
+      "email": "",
+      "role": "viewer",
+      "position": "Finance Advisor",
+      "subsystem": "General"
+    },
+    {
+      "id": "1b197b0c-0f44-57ff-873e-7c6a6e0aff38",
+      "name": "Jubjang",
+      "email": "",
+      "role": "viewer",
+      "position": "Procurement",
+      "subsystem": "General"
+    },
+    {
+      "id": "34f60a1a-3346-5ee3-8c04-e2c6f5531e8b",
+      "name": "Nott",
+      "email": "",
+      "role": "viewer",
+      "position": "Procurement",
+      "subsystem": "General"
+    },
+    {
+      "id": "2d423fb0-8b18-5872-a5b5-c0df868afffe",
+      "name": "Goody",
+      "email": "",
+      "role": "viewer",
+      "position": "Data Gathering",
+      "subsystem": "General"
+    },
+    {
+      "id": "659e8877-f0e1-5706-a3c1-74394f5a93d0",
+      "name": "Ajarn",
+      "email": "",
+      "role": "viewer",
+      "position": "Wiring Advisor",
+      "subsystem": "General"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "72fbbe72-d516-5982-8656-9b11ea096fa0",
+      "title": "Bracket welding (Drivetrain, Accum, Elec, Aero, MS, Body)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "1152baeb-7296-5bd5-a9ad-dc7cbb50e704",
+      "title": "Frame paint (start when welding finished)",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "6fa2b8de-4ff7-5b67-8458-72d9269e131e",
+      "title": "Body part & Aerodynamics - plug making",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "54b4b6ae-9303-5d1e-867e-4fd409ec7f00",
+      "title": "Torsion simulation",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "d1a987c4-0765-56b8-8f7f-229282338a37",
+      "title": "Modify frame to BP18 Ver.4",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "a175978e-ed73-5c60-8827-610d8db1335b",
+      "title": "Aero simulation - 3D CFD (OpenFOAM multi-element)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4f0117fb-0801-5e65-880b-9d46d959ea03",
+      "title": "Impact attenuator must pass 600 J (currently FAIL - 600 J to go)",
+      "status": "in-progress",
+      "priority": "critical",
+      "tags": [
+        "Test",
+        "Impact"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "f6ea5e22-26df-585b-b86a-4ea3d9803637",
+      "title": "Cost & Drawing (frame)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-25T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "5bd562b3-ee3a-5112-b830-be37c4489549",
+      "title": "FR A-arm",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "2bdb951c-aa68-5bc3-8294-3d4a207daa36",
+      "title": "Sliding rail",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "ba1d2197-c469-5a17-9ed4-214a55816c01",
+      "title": "Harness (frame side)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "7653a8f2-bf8e-545b-9731-d6555197d227",
+      "title": "FR decouple",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "4ab8664c-5104-5d8e-9b17-632379fe3cfc",
+      "title": "RR decouple",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "c03dd345-b974-5378-9ba7-cade171dabfa",
+      "title": "Steering system (frame side)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "10a28ca7-c83b-5db3-bcbf-91693dd704de",
+      "title": "Bamo bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "bde4af23-70e7-5f94-89ee-186590123f3d",
+      "title": "Battery bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "56bc36de-bbb5-593e-9aa9-83c20ea410ef",
+      "title": "IA manufacturing mould",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "67736110-e11c-5fe5-9829-24ac73004911",
+      "title": "PU foam solution 6 kg - order",
+      "status": "done",
+      "priority": "low",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-10T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "9ce3578a-b8d8-5c4b-bfff-972100ba36ba",
+      "title": "IA manufacturing (1/2 complete)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "29a7f6cd-074a-5aa1-8278-1ebcfa4e5e43",
+      "title": "Front bulkhead jig design",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "971e5302-f3b4-599a-936a-942c2afe7449",
+      "title": "Jig material (MDF)",
+      "status": "done",
+      "priority": "low",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "5314c2c3-9247-5d47-8493-31a8c9845609",
+      "title": "Jig fabrication (laser cut & 3D print)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "82086afd-5c7c-5f01-ba14-69d7618e7738",
+      "title": "Front bulkhead material (PSP + old tube, AIP)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "f14ee848-54af-562b-bab4-18de57c33906",
+      "title": "Front bulkhead fabrication",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-14T09:00:00.000Z"
+    },
+    {
+      "id": "f25cb965-5d64-5584-bde2-2267da61f15e",
+      "title": "UTM compression test (14 September, afternoon half day)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "d4006b4e-e914-54f1-a494-1ecf4ae6d746",
+      "title": "IA design 2 sealing method (epoxy glue - best method)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "14a95947-bde2-5d85-8351-ea434a3be7dd",
+      "title": "Source TX-71 series PMI foam for impact attenuator",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "c71c56a7-5bac-5b09-8c6e-5a575965061a",
+      "title": "Await manufacturing & shipping quote for 3 CNC-machined IA pieces",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "a4a2fb47-401e-5f35-8630-c359548f8db5",
+      "title": "Find PU foam supplier (Foamtec / Alibaba)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "720170b0-aaba-5f42-a80f-fc1ec8217d91",
+      "title": "Ansys Explicit Dynamics 80 kg/m3 cubic model",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "15654cba-1aff-56ec-8c17-85a366c7133f",
+      "title": "Impact model (loading rate still being defined)",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "7177ca1b-6e42-53ae-881d-d440f6e96ace",
+      "title": "Frame drawing - 60/60 parts",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "683f8ae3-7312-5df4-8e1e-cb7c957ff518",
+      "title": "Bracket drawing",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "334dbe7a-0af3-561a-88e3-62b80818d34b",
+      "title": "Miscellaneous drawing",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "c832f2fd-b22b-52bd-8fe8-ab59dc7ba068",
+      "title": "Aeropart drawing",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "35ffdf50-b557-5367-a6b8-bdefd693f6a5",
+      "title": "Aeropart assembly - 70/70 parts",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "0acc2337-c630-5b0c-b179-9e6ffbaa3a66",
+      "title": "All bracket assembly - 22/40 parts done",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "efa6acd0-0253-570c-9efa-171d36043b69",
+      "title": "ST bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "0dc26f38-e57b-5854-b274-33d7540f5b7e",
+      "title": "Cooling bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "1ec4ed6f-d745-59eb-a3da-ebfc70d83376",
+      "title": "JuncBox bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "528753a8-c794-5f87-a51f-207e19585a3c",
+      "title": "Motor controller bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "eda3a990-c717-50a3-9dc7-8af1b4d6009e",
+      "title": "Aero part & bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "03ff390c-ca11-55ff-9e2c-901bc0d8002f",
+      "title": "EL bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "38d3872d-1a9c-52cd-8b55-de133d5e649d",
+      "title": "Bracket drawing (due 23/9)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "43bde7ec-81c4-5ca3-b1a8-48f7eb4904e9",
+      "title": "Bracket cost (due 25/9)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-25T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "40400209-8986-5288-826d-992a51551f98",
+      "title": "Aero design (3D sim done, ready to design)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "1b4418ab-3b83-5cc7-9eaa-549f92ed8094",
+      "title": "Firewall",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-09-23T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "dc15b6cf-51e1-5506-b88c-b06d733a78ad",
+      "title": "Frame assembly drawing draft 1 (Ver.3) - 99%",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "3cfce1bb-42f1-566d-8fcd-cd3e6157ec61",
+      "title": "Frame assembly cost draft 1",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "9f36c536-f264-5196-a63e-71ebb42666e1",
+      "title": "Frame assembly drawing draft 2 (Ver.4) - 33%",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d9637945-484f-537d-8055-b224d7755fc2",
+      "title": "Frame assembly cost draft 2",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "a136b5b8-1733-5870-8dde-0c53230f20e0",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "48efa8f8-5fb6-5540-967e-688a37b60bf2",
+      "title": "Front wing mainplane (prepreg 600 gsm, 3 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "921b85e5-701f-5b13-bd72-09d19480e8c3",
+      "title": "Front wing flaps (prepreg 300 gsm, 2 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "909a0890-fdd6-5605-9f4f-b3ae09d13f33",
+      "title": "Front wing endplates (birch plywood 3 mm)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "8504bf2f-8c4e-52d1-87de-5522c659b46f",
+      "title": "Front wing mounts & brackets (aluminium/steel)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "6f3cfef4-7ba2-59da-83c6-ceaa75c928f6",
+      "title": "Rear wing mainplane (prepreg 600 gsm, 3 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "bf00504c-b319-50c3-bab7-cfb868d9d55c",
+      "title": "Rear wing flaps (prepreg 300 gsm, 2 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "2ada225a-288c-57ca-9f5a-56f79db9d0bb",
+      "title": "Rear wing endplates (prepreg 300 gsm / honeycomb)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "aa9792da-8c09-5782-87cb-2b18c1de6600",
+      "title": "Rear wing mounts & brackets",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "f0d761e7-2fc8-535e-a2f3-670fd7621cea",
+      "title": "Nosecone outer shell (prepreg 300 gsm, 3 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "154c5c30-d76a-5b9c-bdb0-9a2e57be84b2",
+      "title": "Sidepods (prepreg 300 gsm, 3 layers)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "b2c6ac8c-9dea-50a5-9595-1241a3914645",
+      "title": "Side wings / deflectors",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "886f7e45-64e9-5ceb-a1f3-b6fab93b6288",
+      "title": "Side plate (birch plywood 3 mm)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "0ddd7b97-6e8f-55b8-a1f7-be55d89ef888",
+      "title": "Undertray floor (fiberglass 200 gsm + coremat)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "6ca1dad3-3ab4-5bcc-98c1-6ae4a1145993",
+      "title": "Diffuser tunnel & fins (carbon prepreg / birch)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "a4b685a5-a327-5995-a096-0d6baac303c2",
+      "title": "Undertray brackets (aluminium 6061-T6 / PETG)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "e4f18ec8-55b5-5e9d-8a19-63adf6ef5a72",
+      "title": "Suspension drawing - 99%",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "9128f916-9d78-5283-b80e-abc43904f465",
+      "title": "Suspension cost - 0%",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "abd28b66-c572-5c12-8beb-02b92559b255",
+      "title": "DCP geometry",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "f1aa2188-b18b-5392-93a5-2936c119bcfb",
+      "title": "DCP assembly",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "e2565c3d-59c9-5356-a90f-449a0a09850b",
+      "title": "DCP FEA",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "15f36f26-ea97-5789-a06f-00c4c424240f",
+      "title": "Simulink model",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Simulation"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "cf510972-3a52-501e-b3bf-8178a63e7c26",
+      "title": "Dynamics calculation",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Simulation"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "5ffb6c70-7042-546a-b697-19e00a57e0dc",
+      "title": "A-arm aluminium cutting",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "b4e25eb2-3e72-5fea-86ca-714b3cfd0df0",
+      "title": "A-arm CNC machining",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "f8d66daf-46c7-5d4c-85ee-400767be3144",
+      "title": "A-arm bending test",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "d4939bb3-6007-53f3-947d-833ef2c5fb60",
+      "title": "A-arm & rod carbon manufacturing",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Composite"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "6671675e-f46b-5b0f-9014-75b44dfb4b2e",
+      "title": "Assemble brake system",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "39cc08b3-209a-5633-bb79-bb9f8933bd7f",
+      "title": "Assemble steering system",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "2630152e-a979-540c-8cf7-beb579fabb08",
+      "title": "Tag weld all suspension bracket",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "f9401fa0-e27a-513b-a2de-8864bb1008ce",
+      "title": "CNC manufacturing",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "a1efd38f-eff9-53d9-8ea2-aa3f1060a75d",
+      "title": "Brake system design",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "40f5c72b-9752-51f8-a319-4facf7a94b05",
+      "title": "Brake weight reduction (3174 g -> 2567 g, -600 g)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "8561c5cb-e14a-51d5-900d-d764fe26661a",
+      "title": "Brake pedal design (ratio 1:5 / 1:7)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "a6f089bd-09a0-5c4d-a920-a7e59d9b38cc",
+      "title": "Brake cable routing",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "114d800a-ed4e-5a1b-b8b4-59c2095c8171",
+      "title": "Brake pressure switch",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "e582b414-39af-5fd8-bea1-c00e95ae09a6",
+      "title": "Brake disc simulation (T max 162.26 C)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "2046f531-4821-5305-b686-704fde21d7e0",
+      "title": "Brake dynamometer DIY",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "0edd612a-0892-58a5-9e10-58ac482ae43e",
+      "title": "Brake cooling optimization",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "f94a13f8-c2aa-581b-aa22-5944bcde0f9d",
+      "title": "Steering system",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "c56501fa-b2a8-56b3-bb36-1bab555a6580",
+      "title": "Steering assembly",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "000c4d1d-957d-595d-b39e-792fb78f3f9b",
+      "title": "Steering sensor",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "3e89f6f4-70ac-53f7-8024-70f3f6986aba",
+      "title": "Steering bracket",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "fac6ba5c-e4d1-5774-ab51-681fe26d64dc",
+      "title": "Steering drawing",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "d174374e-8e8d-5863-9c92-c94ace9c8c8b",
+      "title": "Steering cost",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "fcf65a6a-5e34-5f4c-bff9-edbe153bb0ff",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "0744de26-8cc0-5c10-80f4-d6d37a14fc25",
+      "title": "Steering potentiometer (1-2 pcs, 92.69 THB)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "15e8ac5d-aa52-57ec-918c-e32a8752abf3",
+      "title": "Emergency switch + BOTS (1-2 pcs, 155 THB)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4d7ec9b7-3c9d-5a14-8956-1e90109e1fd4",
+      "title": "Inertia switch (2-3 pcs, 131 THB)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d11e01af-ea48-581e-b728-72aaf8fad5bd",
+      "title": "Key switch",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4c486083-a7ed-5a3c-8399-bf448ba2aa4b",
+      "title": "Powertrain drawing - 80% (remaining cooling)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "df4b5fdf-0592-595e-998e-36b62421f98c",
+      "title": "Powertrain cost - 80%",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d53a3a76-ca71-57f7-a091-c00baa168c79",
+      "title": "Rear wheel drivetrain",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4e4513c4-4f1a-5c4c-9c1b-1d8cc8627391",
+      "title": "Front wheel drivetrain",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "d1fb1dac-1fbc-518b-a898-0e8f79096f67",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "cddb12a6-84a9-5e49-9e4b-17c421705903",
+      "title": "Accumulator",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "9f6038b6-73de-5c56-bdce-2d5e4d09ab84",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "31104509-23c9-5b05-978b-2a8e13721e2a",
+      "title": "Cooling system",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "4fb05ebd-6775-5d30-a588-3120deed78d6",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "9cc9035c-2caa-5f04-92d5-84b81cc470a1",
+      "title": "LSD overhaul",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "fed8f93f-eb9e-5242-aac1-30844ce564b5",
+      "title": "New rear drivetrain",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "4ad0c3ef-4a80-5a8b-a443-28010ea1e143",
+      "title": "Sprocket mounting topology (13 mm, SF 2.45)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "c9bc127c-e159-57ef-bd18-9077be966366",
+      "title": "Sprocket carrier topology (SF 3.43, 174 g)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "5dabbaad-9214-578a-8e02-9200f0e43f9f",
+      "title": "Motor mounting topology (13 mm, SF 6.79, 0.844 kg)",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "d1fb1dac-1fbc-518b-a898-0e8f79096f67",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "1ee34672-45d0-535b-abef-97b980dc50f6",
+      "title": "Planet gear (stress error 0.5%, dynamic factor 208 MPa)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "FEA"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "3b47ea0e-cf82-5b49-89ba-a48175aa41d8",
+      "title": "Bracket (DT + ACC) - everyone, 13/11 (15/11)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "ac8f85b2-2b98-5b82-abeb-b48e814ed944",
+      "title": "CNC front sprocket shaft",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "ed930197-84be-5fd7-9421-1ca3fa2f482b",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "b9f8afbd-7f68-5769-94f5-af5bb479376b",
+      "title": "Spacer fardrive",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "e293b019-a316-59e2-912a-5cccdf5af699",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "a63c317c-d7a7-5fb8-a6cd-6b7778ad18a8",
+      "title": "Resolver shaft",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "e293b019-a316-59e2-912a-5cccdf5af699",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "d3733461-9c2c-5528-b6cc-476b8af71d71",
+      "title": "Copper wire cut",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "9f6038b6-73de-5c56-bdce-2d5e4d09ab84",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "3a92ec6e-9877-5ccd-adcd-eb7029a069dc",
+      "title": "Accumulator finalize",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Design"
+      ],
+      "assigneeId": "9f6038b6-73de-5c56-bdce-2d5e4d09ab84",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "73710527-2e27-5ff4-a82e-84343fd4260c",
+      "title": "Bolt list - everyone, 15/11",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "61733a27-cb13-5b2a-95b4-dcf99fdb6cb4",
+      "title": "BRD (20/11, 27/11)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "5540521d-593d-50bf-b8cc-c034b2811162",
+      "title": "BMS integration - 2 of 7 units wired and communicating",
+      "status": "in-progress",
+      "priority": "critical",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-06T09:00:00.000Z"
+    },
+    {
+      "id": "d9fbe45a-83d6-5091-bbaf-0526d4fcb2ab",
+      "title": "Real-time BMS monitoring dashboard",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "17855945-8464-54a0-abff-f39c841d1a30",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "50d7698c-9a57-5a38-88f1-a2caf9f1c2f8",
+      "title": "Wi-Fi module local network for BMS telemetry",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "17855945-8464-54a0-abff-f39c841d1a30",
+      "due": "2026-09-30T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "06598a15-57d7-5e54-b2ca-0ebc75633abc",
+      "title": "Full system scaling - remaining 5 BMS segments",
+      "status": "todo",
+      "priority": "critical",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-06T09:00:00.000Z"
+    },
+    {
+      "id": "ef07cb66-2117-5307-b86a-ea3b22ec3711",
+      "title": "Offline SD card data logging",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-06T09:00:00.000Z"
+    },
+    {
+      "id": "3ac6b67f-1df8-5f0d-8312-5dc78f05f7c9",
+      "title": "AMS_OK GPIO safety interlock",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-06T09:00:00.000Z"
+    },
+    {
+      "id": "4a26c890-3ac8-5ddc-985a-b7f793fb07c4",
+      "title": "Battery pack module build",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "6b1f46be-e068-5098-82d4-8449acf23641",
+      "title": "BCU development (from P'Tonn BCU)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "dd627135-b235-54fd-8427-d0e0be5c4ab6",
+      "title": "CAN battery monitoring & balance",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "BMS"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "93177cc5-131e-5dd8-892d-c2aa1f7ebc2e",
+      "title": "PCB fuse board - 70% (schematic & PCB draft 1 done)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4796432a-5d35-5eb6-90fe-379ef3ea4500",
+      "title": "3D CAD accumulator container clearance",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "CAD"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d289000f-1c9f-5640-9711-ab87b38ae21c",
+      "title": "Source main power connectors (Total+ / Total-)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "435e7339-2a05-5df1-bbfe-d726afdfc25f",
+      "title": "Battery +/- pole attach",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "127e49e8-5002-5d59-8fb7-aff8a77ebe04",
+      "title": "Ultrasonic weld (next week)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "776ca060-9758-5742-aa20-6abeaec469c6",
+      "title": "Inverter datalog",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "22e41683-10e8-513c-a07c-47c827e07d7f",
+      "title": "Wiring harness diagram",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "59224591-816c-5fbd-aa0b-98a1c69331fb",
+      "title": "Wiring harness cost (sponsor: Harness.design)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-25T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "e6b76f53-e625-50f3-babe-5b61aae9dae5",
+      "title": "LV route",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-25T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "83d97f5c-cba4-5bae-a9c5-b678dabec0bf",
+      "title": "Assign harness to component (20/11)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "e89d3d5f-4e7e-5d54-8f45-eecd0f1e7a17",
+      "title": "Netlist table (1st draft by Petch, deadline 7 Aug)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "14fb46a1-0eb4-526b-9170-099991652c63",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "758a3b7d-2839-5471-a527-61d6964c2769",
+      "title": "Electrical (LV/HV/system) diagram - deadline 14 Aug",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-08-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "423f3607-aa94-5a6d-802e-13dc4111b8df",
+      "title": "Component location with body & frame - deadline 14 Aug",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-08-14T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "37dcbf82-11ca-56c3-8b2a-c59a5057a78c",
+      "title": "Rapid harness - deadline 14 Aug, extended 28 Aug",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-08-28T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "6ce4a088-99e5-5a9b-a373-829fea4c7a8b",
+      "title": "Component (connector, wire, tool) selection - 4 Sep",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-04T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "2f13f840-5fc2-5df2-8e3c-dcda3426a795",
+      "title": "Manual connector & label - 11 Sep",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-11T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "bca1409d-ac4f-5dbf-9bb6-6b4294b7c095",
+      "title": "Wiring harness assembly - 18 Sep",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-09-18T09:00:00.000Z",
+      "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "b8349a92-417f-56a7-b681-5d5ea02b5fc1",
+      "title": "Drawing harness",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "af84c046-e408-52ca-a708-0d304d156bac",
+      "title": "Serial BOM for harness",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "DRW"
+      ],
+      "assigneeId": "4bf10924-99a7-520a-b5b1-cb7d01557a64",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "27309052-ecfe-5d51-bf91-c67fd1913769",
+      "title": "Shutdown PCB assembly (almost done - connector 23 pin)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "adf2656a-434c-5b75-8789-5189d442ea3f",
+      "title": "Center hub PCB assembly (almost done - diode & connector)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "08108242-bae8-5d95-944d-462fbd50e854",
+      "title": "BSPD PCB assembly",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "838449c9-486f-5020-a2a8-3a7618ded530",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "611004a8-247c-525a-bfea-5e390e56a9ec",
+      "title": "VCU PCB assembly",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "c5d51013-125d-5929-bf63-d02d2af2fa18",
+      "title": "TSAL control",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "fd95d0ad-cc9f-5977-bbef-8e7a446352b9",
+      "title": "TSAL light",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "d7888463-6ed2-5029-8c75-6786f4e453b0",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "5bb74208-c9f4-5535-bc39-23ed20b206e2",
+      "title": "Center hub schematic design - 100%",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "69f14282-2da4-5a68-9e1d-7e1051488779",
+      "title": "Center hub PCB design - 100%",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "27f5bba7-7095-5fae-acbf-db6239f39074",
+      "title": "BSPD schematic design - 100%",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "838449c9-486f-5020-a2a8-3a7618ded530",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "bd348003-955a-5a0e-9aee-d467b299b16b",
+      "title": "BSPD PCB design - 100%",
+      "status": "done",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "838449c9-486f-5020-a2a8-3a7618ded530",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "200ed4d4-c4a5-53bc-9166-778acd814bb9",
+      "title": "PCB routing bug - re-order placement",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-10-30T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "24206383-5d39-5374-8a44-d830063b582a",
+      "title": "PCB order (SIAM PCB)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "b722b5d9-8297-5f65-aeef-80fae0399490",
+      "title": "ECU PCB",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "91183d01-838e-54e2-b448-8ef2559f5b47",
+      "title": "ESF shutdown circuit (schematic all done)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "19f7db89-a8f7-5a16-afc7-9f1d0eafff48",
+      "title": "PCB implementation test (deadline 20/11/2026)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "05f4f504-cabd-5900-bab4-31ee989c839c",
+      "title": "Complete PCB assembly (deadline 4/12/2026)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Manufacturing"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "5f6edae3-6e6c-50ce-91b2-bc6d330f2ba3",
+      "title": "PCB unit test (deadline 18/12/2026)",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "05037d59-f9ec-5912-9ca9-240018075296",
+      "due": "2026-12-18T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "97c9817a-2d08-5ebb-b242-43565a025155",
+      "title": "Control torque vectoring draft 1",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "14f59124-54ac-5667-8717-c9004b54ea8e",
+      "title": "ADC reading",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "7abffa5e-130e-5931-b3dd-6cbd63715ed5",
+      "title": "DAC read/write",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "19435263-536c-5b3c-8ef9-c377fc23a2ae",
+      "title": "IMU testing",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "2cd56b48-f3f0-5678-8135-cf166169585c",
+      "title": "Micro SD card read/write",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "234d9f56-a225-55f0-b719-31f4cb2076d1",
+      "title": "CANBUS",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "51431885-2fe1-5210-a2fc-fd55da40f775",
+      "title": "4G module",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Elec"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "611f403c-ba42-5248-b3cd-ce6daafa5678",
+      "title": "Integration",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "2b03bea9-9007-5c07-86e5-263bb585cc2e",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "639019c0-ca13-590d-962e-159abf61e73b",
+      "title": "ESP32 CAN bus received (Gao)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Telemetry"
+      ],
+      "assigneeId": "af8cf15b-9ae0-5859-9477-fb334e855cff",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "85e773ab-90e6-5cb3-b1bb-e952c4846930",
+      "title": "Waveshare LCD received (N'Pun, next week)",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Telemetry"
+      ],
+      "assigneeId": "9f221e26-c11a-55dd-8ded-d188701efbec",
+      "due": "2026-11-13T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "6b867757-7cd1-52b9-b968-383b3fe30635",
+      "title": "Waiting for BMS shipping",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Procurement"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "9ceffb13-2466-58a1-a94c-9fab1a6d1a54",
+      "title": "CAN data logging test",
+      "status": "todo",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "af8cf15b-9ae0-5859-9477-fb334e855cff",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-13T09:00:00.000Z"
+    },
+    {
+      "id": "fb34ffea-2991-5a46-8134-a6928dec44ff",
+      "title": "Read Bamo data and tune each parameter",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Test"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-12-04T09:00:00.000Z",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "48071401-e299-5292-9541-b9a5409b6bbc",
+      "title": "Mobile telemetry UAV (model finetuning WIP, deployment awaiting cost)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Telemetry"
+      ],
+      "assigneeId": "af8cf15b-9ae0-5859-9477-fb334e855cff",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "82f520c9-0081-54ca-958a-b59b6ecc9088",
+      "title": "Yellow paper - 80% (summit 20 Nov 2026)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Business"
+      ],
+      "assigneeId": "f114eb44-85e5-53f5-a078-c18852bb6cc6",
+      "due": "2026-11-20T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "bbe0aecb-801f-54e4-9220-a5946b530d5d",
+      "title": "Business pitch - red team vs blue team (before Christmas)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Business"
+      ],
+      "assigneeId": "f114eb44-85e5-53f5-a078-c18852bb6cc6",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "c6baeb8f-d096-57aa-954b-a27aea921959",
+      "title": "Ling's team financial review with P'Chamint",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Finance"
+      ],
+      "assigneeId": "f114eb44-85e5-53f5-a078-c18852bb6cc6",
+      "due": "2026-11-27T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "b5e1e6bc-8aec-57a8-b7a3-586d06ff328f",
+      "title": "Livery design (deadline 14 Jan 2026)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-14T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "364cd5da-72a0-5470-83c9-291e8a7d8ac9",
+      "title": "Sponsor logo - 90%",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-14T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "3cd2a48c-53cd-537b-9980-8ac600f660f6",
+      "title": "Graphics design - 80% (deadline 25 Jan 2026)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-25T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "4b74ac48-17e6-5458-ae3b-970d9f873b56",
+      "title": "PR posts (Christmas done, New Year in process)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-14T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d2a28e9e-f3d5-5050-8913-57ce30b402f5",
+      "title": "Team T-shirt design",
+      "status": "todo",
+      "priority": "low",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-25T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "85b6aa39-aad8-5dfb-beb4-b62e5db0fda7",
+      "title": "Sponsor appreciation poster",
+      "status": "todo",
+      "priority": "low",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-01-25T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "0c50bf24-125c-5fc8-b679-5019215948e9",
+      "title": "Car launch poster & reveal video",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-02-01T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "466dc3fb-5ef0-5242-b2b7-1ecf52021329",
+      "title": "TSAE race day content",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "PR"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-02-01T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "83575d94-b668-53f4-857d-1402f2dd0917",
+      "title": "B-PAC asset & cost control system",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Finance"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "f40c8dc4-9b2f-5f98-835e-0d21a360f8ad",
+      "title": "Financial & sponsor plan TSAE2027",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Finance"
+      ],
+      "assigneeId": "e9a98288-7cdc-5fee-a833-07e4cb894faf",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "d718e850-0cd4-5d0d-b563-e073777ed06d",
+      "title": "ISSUE#46A Faulty sensors (no signal + noise) - buy 2 new sensors",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "f391451d-bffd-5676-81b2-93c7bd0b4198",
+      "title": "ISSUE#46B Bad sensor calibration - new CAD + recalibrate code",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "487dca58-42bc-5c44-80df-1b2f97e416fe",
+      "title": "ISSUE#46C Bad data-logger code (not portable, timer)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "b6db07c3-5080-5be0-8e50-9b9bfbeb5bec",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "5cb30233-b29f-5391-9706-bbd633285afa",
+      "title": "ISSUE#46D Plastic tone ring - changed to steel",
+      "status": "done",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "b6ceac6c-e399-56cc-aafe-a42647fd12da",
+      "title": "ISSUE#46E Bad weather station (DHT11) - deferred to Thermo dept",
+      "status": "in-progress",
+      "priority": "low",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "d9e3700e-f823-5535-901d-b799704bb8af",
+      "title": "ISSUE#46F CAN bus bad code - practice session with Folk",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "8de7a11f-4a20-5c4a-93ec-a78fcbd2cb9a",
+      "title": "ISSUE#46G Power cut triggers connection reset",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "b6db07c3-5080-5be0-8e50-9b9bfbeb5bec",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "c24f2e20-7a0b-54f2-81a2-9d10e50464f6",
+      "title": "ISSUE#46I Pin configuration - new PCB with standard pins + SD config",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "f101171e-8118-5290-ab02-41b04a11c506",
+      "title": "ISSUE#46K Data lost when ESP32 disconnects - SD card backup",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "b6db07c3-5080-5be0-8e50-9b9bfbeb5bec",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "8577561b-a53d-5f23-affe-e55b3cc4a9f8",
+      "title": "ISSUE#47A Speed measurement from BP Mobile unreliable (GPS API)",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "b6db07c3-5080-5be0-8e50-9b9bfbeb5bec",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "78a3c79b-d1c6-5f6d-890d-7947fa6ede33",
+      "title": "ISSUE#47B Broken front suspension - re-3D print mount",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "5fc1a7ef-6eab-5e5d-9924-4b84e4f2bad4",
+      "title": "ISSUE#47C Low-voltage power not restored after inspection",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "f72c47a7-d37a-551b-b4ac-0ec5b3bd85ec",
+      "title": "ISSUE#47D Wiring quality + installation concerns",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "cfd3c459-37e2-56be-9704-c87370d16620",
+      "title": "ISSUE#47E Wheel hub & ground clearance (hub nearly broke)",
+      "status": "in-progress",
+      "priority": "high",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "196f8ecf-7cbb-51b6-91e9-67021d84718f",
+      "title": "ISSUE#47F Telemetry not data-logging (power issue)",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "33c8fb95-c306-5b48-8e90-3c2e717499eb",
+      "title": "ISSUE#47G Pending telemetry tasks - order ESP32 + draw circuit diagram",
+      "status": "in-progress",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "9e95b84a-4ccb-5907-b12e-1d94aa900d0a",
+      "title": "ISSUE#47H Workload transfer to Pooh",
+      "status": "in-progress",
+      "priority": "low",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "68cb755e-0193-5015-b121-90fa61cfa216",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "dcb25847-91cd-5c04-af5d-82b80389c40e",
+      "title": "ISSUE#47I Team capability expansion (Lily & Folk take over sensors)",
+      "status": "in-progress",
+      "priority": "low",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "ab6970ad-87ee-5974-af4a-7b1df995aa32",
+      "due": "2026-11-30T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "id": "92d30831-cf1b-5677-be44-65dd247faa4b",
+      "title": "ISSUE#47J Next continuous test schedule (Dec week 2)",
+      "status": "todo",
+      "priority": "medium",
+      "tags": [
+        "Issue"
+      ],
+      "assigneeId": "d0791e28-fad3-5698-9a1b-9efcdb4d7aa7",
+      "due": "2026-12-10T09:00:00.000Z",
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    }
+  ],
+  "bom": [
+    {
+      "id": "65277c12-9abe-544c-bbe1-05f3bdb78dff",
+      "partName": "Front wing mainplane",
+      "partNumber": "AERO-FW-001",
+      "assembly": "Front Wing",
+      "material": "Prepreg 600 gsm / XPS foam",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 6104,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "e70492e9-4378-584c-9e9a-3495bf53ca1d",
+      "partName": "Front wing flaps",
+      "partNumber": "AERO-FW-002",
+      "assembly": "Front Wing",
+      "material": "Prepreg 300 gsm / XPS foam",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 1687,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "e1adeb7f-873f-51f9-8161-72e9ae5fbc78",
+      "partName": "Front wing endplates",
+      "partNumber": "AERO-FW-003",
+      "assembly": "Front Wing",
+      "material": "Birch plywood 3 mm",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 990,
+      "vendorStatus": "received",
+      "mfgStatus": "cutting"
+    },
+    {
+      "id": "8ab8ce7c-2f05-55f8-8fa0-5991dc70435d",
+      "partName": "Front wing mounts & brackets",
+      "partNumber": "AERO-FW-004",
+      "assembly": "Front Wing",
+      "material": "Aluminium / steel sheet",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 3039,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "795faa78-bc7c-5326-9141-6067bb4f8409",
+      "partName": "Front wing hardpoints / inserts",
+      "partNumber": "AERO-FW-005",
+      "assembly": "Front Wing",
+      "material": "Aluminium insert / epoxy",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 954,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "f47ee877-198f-52c7-afae-f466762846c4",
+      "partName": "Rear wing mainplane",
+      "partNumber": "AERO-RW-001",
+      "assembly": "Rear Wing",
+      "material": "Prepreg 600 gsm / XPS foam",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 6475,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "85d9149f-ac2e-5da8-bcca-41070e63299a",
+      "partName": "Rear wing flaps",
+      "partNumber": "AERO-RW-002",
+      "assembly": "Rear Wing",
+      "material": "Prepreg 300 gsm / XPS foam",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 1535,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "2ab3fbfc-3f00-5089-a177-ef1127292e84",
+      "partName": "Rear wing endplates",
+      "partNumber": "AERO-RW-003",
+      "assembly": "Rear Wing",
+      "material": "Prepreg 300 gsm / honeycomb",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 542,
+      "vendorStatus": "received",
+      "mfgStatus": "cutting"
+    },
+    {
+      "id": "e3b340b3-183d-562f-b047-3bc2ae14658b",
+      "partName": "Rear wing mounts & brackets",
+      "partNumber": "AERO-RW-004",
+      "assembly": "Rear Wing",
+      "material": "Aluminium / steel sheet",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 3039,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "d07b0e7a-c862-5f70-81c1-e1dc6ca4ff23",
+      "partName": "Nosecone outer shell",
+      "partNumber": "AERO-BD-001",
+      "assembly": "Body",
+      "material": "Prepreg 300 gsm",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 3338,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "97489d76-48ea-57f9-948b-913afc9652f6",
+      "partName": "Sidepods",
+      "partNumber": "AERO-BD-002",
+      "assembly": "Body",
+      "material": "Prepreg 300 gsm",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 6464,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "e6e39939-2140-5f2b-a142-92f4b75a628c",
+      "partName": "Side wings / deflectors",
+      "partNumber": "AERO-BD-003",
+      "assembly": "Body",
+      "material": "Prepreg 300 gsm",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 2136,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "5c834012-c423-5dd0-b6be-30f47e4d72e9",
+      "partName": "Side plate",
+      "partNumber": "AERO-BD-004",
+      "assembly": "Body",
+      "material": "Birch plywood 3 mm",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 848,
+      "vendorStatus": "received",
+      "mfgStatus": "cutting"
+    },
+    {
+      "id": "1783b3d1-785c-5c87-8bd4-d45b967012b7",
+      "partName": "Undertray floor",
+      "partNumber": "AERO-UT-001",
+      "assembly": "Undertray",
+      "material": "Fiberglass 200 gsm / coremat",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 2746,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "bc321c34-b117-5f67-8c2a-9b19f5e82686",
+      "partName": "Diffuser tunnel & fins",
+      "partNumber": "AERO-UT-002",
+      "assembly": "Undertray",
+      "material": "Carbon prepreg / birch plywood",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 4273,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "14ea1c0f-a7c2-5c60-a0d4-d132854da037",
+      "partName": "Undertray brackets",
+      "partNumber": "AERO-UT-003",
+      "assembly": "Undertray",
+      "material": "Aluminium 6061-T6 / PETG",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 1271,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "4fcb7c01-8ced-5433-aef9-13f70201bb38",
+      "partName": "IA PMI foam + CNC machining (per piece)",
+      "partNumber": "IA-002",
+      "assembly": "Impact Structures",
+      "material": "TX-series PMI foam",
+      "quantity": 3,
+      "unitWeight": 0,
+      "unitCost": 12048,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "24fd6fe8-5a00-5743-874b-9c6b541180d8",
+      "partName": "IA CNC shipping (3 pieces)",
+      "partNumber": "IA-003",
+      "assembly": "Impact Structures",
+      "material": "Freight",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 3667,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "3493f50f-e91f-51bb-9587-98fd954682b3",
+      "partName": "Roll rod end 1,2 & roll shock mount",
+      "partNumber": "SUS-DCP-001",
+      "assembly": "Suspension",
+      "material": "Steel",
+      "quantity": 4,
+      "unitWeight": 0,
+      "unitCost": 527,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "177bf59d-768c-5de8-8916-fccb2fcb4bdf",
+      "partName": "M6 linear bearing C-LMU6",
+      "partNumber": "SUS-DCP-002",
+      "assembly": "Suspension",
+      "material": "Steel",
+      "quantity": 8,
+      "unitWeight": 0,
+      "unitCost": 61,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "2fe22637-a654-56f4-a11d-a8dbb4e7e984",
+      "partName": "6 mm linear shaft PSSFAL6-315-B20-S20",
+      "partNumber": "SUS-DCP-003",
+      "assembly": "Suspension",
+      "material": "Steel",
+      "quantity": 8,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "d58bd372-7243-5330-8219-583de960d8b6",
+      "partName": "STKM 13B pipe 25.4 OD x 1.2 mm (6000 mm)",
+      "partNumber": "RAW-STKM-12",
+      "assembly": "Raw Material",
+      "material": "STKM 13B",
+      "quantity": 4,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "57422954-1964-520a-a9cf-79c96d573595",
+      "partName": "STKM 13B pipe 25.4 OD x 1.6 mm (6000 mm)",
+      "partNumber": "RAW-STKM-16",
+      "assembly": "Raw Material",
+      "material": "STKM 13B",
+      "quantity": 4,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "73b8e83e-3775-5896-bda6-b515cc5c55aa",
+      "partName": "STKM 13B pipe 25.4 OD x 2.4 mm (6000 mm)",
+      "partNumber": "RAW-STKM-24",
+      "assembly": "Raw Material",
+      "material": "STKM 13B",
+      "quantity": 4,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "576b9b32-cab0-5526-a308-35c53dd4330e",
+      "partName": "Tube OD 16 mm / ID 12 mm x 14.5 m",
+      "partNumber": "RAW-OD16",
+      "assembly": "Raw Material",
+      "material": "Steel",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "38e76565-e393-51ea-b8d7-d2798d96f3d8",
+      "partName": "Accumulator pack 30 Ah (84 cells, incl 1 spare module)",
+      "partNumber": "PWT-ACC-001",
+      "assembly": "Accumulator",
+      "material": "Li-ion cells",
+      "quantity": 1,
+      "unitWeight": 73000,
+      "unitCost": 63825,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "c870ebc8-58fc-5348-b4a1-8fd52d5ea5e3",
+      "partName": "BMU (Daly BMS slave board)",
+      "partNumber": "PWT-BMS-001",
+      "assembly": "Accumulator",
+      "material": "Electronics",
+      "quantity": 7,
+      "unitWeight": 62,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "4f540368-bf04-5c77-850b-81ae1b2f5021",
+      "partName": "Board fuse",
+      "partNumber": "PWT-BMS-002",
+      "assembly": "Accumulator",
+      "material": "Electronics",
+      "quantity": 1,
+      "unitWeight": 168,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "4ad0c3ef-4a80-5a8b-a443-28010ea1e143",
+      "partName": "Sprocket mounting (topology, 13 mm)",
+      "partNumber": "PWT-DT-001",
+      "assembly": "Drivetrain",
+      "material": "Aluminium",
+      "quantity": 1,
+      "unitWeight": 718,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "c9bc127c-e159-57ef-bd18-9077be966366",
+      "partName": "Sprocket carrier (topology)",
+      "partNumber": "PWT-DT-002",
+      "assembly": "Drivetrain",
+      "material": "Aluminium",
+      "quantity": 1,
+      "unitWeight": 174,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "5dabbaad-9214-578a-8e02-9200f0e43f9f",
+      "partName": "Motor mount (topology, 13 mm)",
+      "partNumber": "PWT-DT-003",
+      "assembly": "Drivetrain",
+      "material": "Aluminium",
+      "quantity": 1,
+      "unitWeight": 844,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "machining"
+    },
+    {
+      "id": "1f2dec8f-cb2a-572b-9148-f8be1f85976d",
+      "partName": "Steering assembly",
+      "partNumber": "STR-001",
+      "assembly": "Steering",
+      "material": "Steel / aluminium",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 13,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "35f81b9e-5b2b-5026-ba61-ccda7562d828",
+      "partName": "Inertia switch",
+      "partNumber": "STR-002",
+      "assembly": "Steering",
+      "material": "Electronics",
+      "quantity": 3,
+      "unitWeight": 0,
+      "unitCost": 131,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "0744de26-8cc0-5c10-80f4-d6d37a14fc25",
+      "partName": "Steering potentiometer",
+      "partNumber": "STR-003",
+      "assembly": "Steering",
+      "material": "Electronics",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 93,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "a6da9428-a1c7-510f-bdf6-19996e801238",
+      "partName": "Emergency switch + BOTS",
+      "partNumber": "STR-004",
+      "assembly": "Steering",
+      "material": "Electronics",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 155,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "00b03920-10a2-54a5-81ce-712c98fe07f7",
+      "partName": "D.I.D 520 ERT3 G&G 120 ZB chain",
+      "partNumber": "PWT-CH-001",
+      "assembly": "Drivetrain",
+      "material": "Steel",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "e1824f8f-bfe9-554f-93dd-180c41b9db2c",
+      "partName": "D.I.D 520 ERV7 G&G 120 ZB (X-Ring) chain",
+      "partNumber": "PWT-CH-002",
+      "assembly": "Drivetrain",
+      "material": "Steel",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "44a3c243-41ed-5f08-861b-3c7313e5788f",
+      "partName": "Lenso wheel",
+      "partNumber": "PWT-WH-001",
+      "assembly": "Drivetrain",
+      "material": "Aluminium",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "received",
+      "mfgStatus": "done"
+    },
+    {
+      "id": "59079659-54eb-565d-887c-43002a966b21",
+      "partName": "Planetary gear (MTM custom ratio)",
+      "partNumber": "PWT-GR-001",
+      "assembly": "Drivetrain",
+      "material": "Steel",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "73700560-cec5-58d9-9354-1fc747c4ecb3",
+      "partName": "RPM sensor (replacement)",
+      "partNumber": "SYS-SN-001",
+      "assembly": "Telemetry",
+      "material": "Electronics",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "fd2f8c60-aebe-519c-925e-eb5fad152e14",
+      "partName": "Stroke sensor (replacement)",
+      "partNumber": "SYS-SN-002",
+      "assembly": "Telemetry",
+      "material": "Electronics",
+      "quantity": 2,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    },
+    {
+      "id": "07faba5c-e81b-5e28-bcc2-55ac5ff8c4ad",
+      "partName": "Weather station (replace DHT11)",
+      "partNumber": "SYS-SN-003",
+      "assembly": "Telemetry",
+      "material": "Electronics",
+      "quantity": 1,
+      "unitWeight": 0,
+      "unitCost": 0,
+      "vendorStatus": "ordering",
+      "mfgStatus": "waiting"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "afa7f8df-f39b-5258-ac8d-97366368e1e3",
+      "name": "SES + Impact report (Quest 1)",
+      "dueDate": "2026-09-07T09:00:00.000Z",
+      "status": "completed"
+    },
+    {
+      "id": "cd550341-99a1-559c-8e92-7301f1d8b0af",
+      "name": "Design report + Cost (Quest 2)",
+      "dueDate": "2026-09-18T09:00:00.000Z",
+      "status": "completed"
+    },
+    {
+      "id": "6fed1e56-a573-54c0-9301-566e1527bd48",
+      "name": "Business plan (Quest 3)",
+      "dueDate": "2026-11-03T09:00:00.000Z",
+      "status": "completed"
+    },
+    {
+      "id": "d714c32d-903d-5f63-b2d6-d74161a2e6b0",
+      "name": "Ansys simulation (Quest 4)",
+      "dueDate": "2026-11-27T09:00:00.000Z",
+      "status": "at-risk"
+    },
+    {
+      "id": "5738c274-47f2-5e56-82d6-026ed4d2f61c",
+      "name": "Race (Quest 5)",
+      "dueDate": "2027-02-02T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "383d306a-c30b-51e3-8794-f3ad3e120999",
+      "name": "Cost + drawing deadline",
+      "dueDate": "2026-09-30T09:00:00.000Z",
+      "status": "completed"
+    },
+    {
+      "id": "4be6c1e1-bb78-544f-93ae-3bbe4e7a1c45",
+      "name": "BOM deadline",
+      "dueDate": "2026-10-02T09:00:00.000Z",
+      "status": "completed"
+    },
+    {
+      "id": "9949fa5e-aad7-59e5-b4d3-dc28f2a3c2c6",
+      "name": "Yellow paper summit",
+      "dueDate": "2026-11-20T09:00:00.000Z",
+      "status": "at-risk"
+    },
+    {
+      "id": "60a2bdd3-7b3d-5af7-9747-570008c8b153",
+      "name": "Complete PCB assembly",
+      "dueDate": "2026-12-04T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "b5ce9720-2ff2-50bc-acf0-21f28e1e0a9b",
+      "name": "PCB unit test",
+      "dueDate": "2026-12-18T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "1ad3c8a3-f2b7-5346-9311-ec885c33f768",
+      "name": "BRD (powertrain)",
+      "dueDate": "2026-11-27T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "cd42a24a-8b35-59c5-a785-3e5f6185470c",
+      "name": "Livery design deadline",
+      "dueDate": "2027-01-14T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "4a65c5c0-aaf7-59f5-8b0f-edb5be41bae8",
+      "name": "Graphics design deadline",
+      "dueDate": "2027-01-25T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "9fad579c-8135-5256-a019-e484a12d02ec",
+      "name": "Final design (TSAE design presentation)",
+      "dueDate": "2027-01-25T09:00:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": "b06e9fce-ab41-5da7-818c-face3bc3aa28",
+      "name": "7/7 BMS integration complete",
+      "dueDate": "2026-09-06T09:00:00.000Z",
+      "status": "delayed"
+    }
+  ],
+  "files": [
+    {
+      "id": "a3f4cb06-20ec-5694-82d1-00d97a2702af",
+      "name": "Frame_Assembly_Ver3_drawing.dwg",
+      "category": "CAD",
+      "type": "DRW",
+      "size": 4200000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "a4e073f8-929c-54bf-8606-a4d9b8592206",
+      "name": "Frame_Assembly_Ver4_drawing.dwg",
+      "category": "CAD",
+      "type": "DRW",
+      "size": 4800000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "b1ee0eb4-c387-5d53-9e85-32145a986700",
+      "name": "IA_varying_thickness_design.step",
+      "category": "CAD",
+      "type": "CAD",
+      "size": 1200000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "c33c90e7-6821-5ee6-a991-3c38ed3826ef",
+      "name": "Front_Wing_layup_schedule.pdf",
+      "category": "Composite",
+      "type": "DRW",
+      "size": 900000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "eff85c36-11ee-5bef-a529-b9b435ae0515",
+      "name": "Rear_Wing_layup_schedule.pdf",
+      "category": "Composite",
+      "type": "DRW",
+      "size": 900000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "b0487936-e717-556f-afd4-e4578dfdd906",
+      "name": "Nosecone_Sidepod_tooling.pdf",
+      "category": "Composite",
+      "type": "DRW",
+      "size": 1100000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "b839ac9b-c016-507e-a43e-2437b34069a0",
+      "name": "DCP_FEA_report.pdf",
+      "category": "FEA",
+      "type": "FEA Report",
+      "size": 2800000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "9b5141e6-2c11-5310-90ca-c90b4f4f14e1",
+      "name": "IA_compression_test_UTM.pdf",
+      "category": "Test",
+      "type": "Test Report",
+      "size": 700000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "09f53fc7-7617-5935-bb2b-4490aa43b8db",
+      "name": "ESF_Shutdown_Circuit.pdf",
+      "category": "Elec",
+      "type": "DRW",
+      "size": 540000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "0b044c66-9860-5a73-96b9-50aeb0c65685",
+      "name": "Wiring_Harness_diagram.pdf",
+      "category": "Elec",
+      "type": "DRW",
+      "size": 1500000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "a99353ff-fa31-5be3-8f54-adbedb5fae1b",
+      "name": "BMS_CAN_integration_report.pdf",
+      "category": "Elec",
+      "type": "Report",
+      "size": 800000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "18abd14d-3a33-598a-a410-d6d008110740",
+      "name": "Aero_cost_breakdown.xlsx",
+      "category": "BOM",
+      "type": "BOM",
+      "size": 410000,
+      "updatedAt": "2026-11-13T12:00:00.000Z"
+    }
+  ],
+  "activity": [
+    {
+      "id": "6e0c9d36-9762-55c0-bbb1-5d117a112636",
+      "message": "Imported BP18 progress data from Progress_13Nov2026.pdf",
+      "type": "system",
+      "actorId": "742efed5-02a7-529d-8e79-a390bd2ff7c3",
+      "timestamp": "2026-11-13T23:00:00.000Z"
+    },
+    {
+      "id": "6ec510d1-e685-595b-8e90-97f8bd7037ad",
+      "message": "Frame modified to BP18 Ver.4 - 29.537 kg (down 3.483 kg from BP16B)",
+      "type": "approve",
+      "actorId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "timestamp": "2026-11-13T12:00:00.000Z"
+    },
+    {
+      "id": "502a6ccc-ed7a-51a5-b03f-3a608f803a86",
+      "message": "Impact attenuator failed 600 J requirement - redesign in progress",
+      "type": "error",
+      "actorId": "1c95e61a-7864-59fd-8d88-61fbda122a75",
+      "timestamp": "2026-11-13T12:00:00.000Z"
+    }
+  ]
+}

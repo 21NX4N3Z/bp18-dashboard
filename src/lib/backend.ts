@@ -279,12 +279,19 @@ async function run(
   ops: { insert?: unknown[]; update?: unknown[]; remove?: string[] }
 ) {
   const asRows = (rows: unknown[]) => rows as Record<string, unknown>[];
+  // Postgres rejects an UPSERT that touches the same row twice in one statement,
+  // so collapse duplicate ids defensively (last write wins).
+  const unique = (rows: Record<string, unknown>[]) => {
+    const seen = new Map<string, Record<string, unknown>>();
+    for (const row of rows) seen.set(String(row.id), row);
+    return [...seen.values()];
+  };
   if (ops.insert?.length) {
-    const { error } = await sb.from(table).upsert(asRows(ops.insert), { onConflict: "id" });
+    const { error } = await sb.from(table).upsert(unique(asRows(ops.insert)), { onConflict: "id" });
     if (error) throw new Error(`${table} upsert: ${error.message}`);
   }
   if (ops.update?.length) {
-    const { error } = await sb.from(table).upsert(asRows(ops.update), { onConflict: "id" });
+    const { error } = await sb.from(table).upsert(unique(asRows(ops.update)), { onConflict: "id" });
     if (error) throw new Error(`${table} update: ${error.message}`);
   }
   if (ops.remove?.length) {
@@ -341,6 +348,25 @@ export async function syncDiff(sb: SupabaseClient, prev: DataState, next: DataSt
     insert: activity.insert.map(activityToRow),
     update: activity.update.map(activityToRow),
   });
+}
+
+/**
+ * Force-push the whole local working set to Supabase.
+ * Deletes remote rows that are no longer local, then upserts everything local.
+ * Used by the "Push local to cloud" button so an import (which replaces the
+ * working set wholesale) can be flushed without waiting for a per-field edit.
+ */
+export async function pushAll(sb: SupabaseClient, state: DataState): Promise<void> {
+  const empty: DataState = {
+    project: { ...state.project, name: "" },
+    members: [],
+    tasks: [],
+    bom: [],
+    milestones: [],
+    files: [],
+    activity: [],
+  };
+  await syncDiff(sb, empty, state);
 }
 
 /* ============================================================================

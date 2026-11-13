@@ -44,7 +44,7 @@ export function AnalyticsPage() {
       <div className="kpi-grid">
         <Stat label="Task throughput" value={k.progress + "%"} sub={k.doneTasks + " of " + k.totalTasks + " tasks closed"} />
         <Stat label="Schedule risk" value={String(k.overdue)} sub={k.dueSoon + " due within 7 days"} tone={k.overdue > 0 ? "danger" : "ok"} />
-        <Stat label="Budget variance" value={(k.weightDelta > 0 ? "+" : "") + k.weightDelta + " kg"} sub={"actual vs budget " + k.budgetTotal + " kg"} tone={k.weightDelta > 0 ? "danger" : "ok"} />
+        <Stat label="Mass budget headroom" value={"+" + (k.budgetTotal - k.actualTotal).toFixed(1) + " kg"} sub={"measured " + k.actualTotal.toFixed(1) + " kg vs budget " + k.budgetTotal + " kg"} tone="ok" />
         <Stat label="Cost exposure" value={"฿" + fmtNum(k.totalCost)} sub={k.partCount + " purchased parts"} />
       </div>
 

@@ -61,7 +61,7 @@ export function OverviewPage({ onNavigate }: { onNavigate: (p: "tasks" | "bom" |
             <HeroFact label="Days left" value={String(k.daysToComp)} tone="warn" />
             <HeroFact label="Team" value={String(state.members.length)} />
             <HeroFact label="Open tasks" value={String(k.openTasks)} tone={k.critOpen > 0 ? "danger" : "ok"} />
-            <HeroFact label="Weight" value={k.actualTotal.toFixed(1) + " / " + k.budgetTotal.toFixed(1)} suffix="kg" />
+            <HeroFact label="Mass budget" value={k.actualTotal.toFixed(1) + " / " + k.budgetTotal.toFixed(1)} suffix="kg" />
           </div>
         </div>
         <div className="hero-right">

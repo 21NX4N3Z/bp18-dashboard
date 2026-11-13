@@ -16,6 +16,7 @@ import { clearConfig, clientSummary, getClient, saveConfig, type SupabaseConfig 
 import {
   clearAll as clearAllRemote,
   loadAll,
+  pushAll,
   resetToSeed as resetToSeedRemote,
   syncDiff,
   testConnection,
@@ -85,6 +86,7 @@ interface StoreCtx {
   clearData: () => void;
   exportJson: () => string;
   importJson: (raw: string) => boolean;
+  pushToCloud: () => Promise<void>;
   backend: BackendStatus;
   connect: (cfg: SupabaseConfig) => Promise<ConnectionResult | null>;
   disconnect: () => void;
@@ -463,10 +465,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           pushToast("Invalid data file", "danger");
           return false;
         }
-        skipSyncRef.current += 1;
+        // Deliberately do NOT touch prevRef or skipSyncRef: the sync effect
+        // diffs against the last-synced state, so a whole-file import becomes
+        // one clean push instead of being silently dropped.
         setState(parsed);
-        prevRef.current = parsed;
-        pushToast("Data imported", "ok");
+        pushToast("Data imported — syncing to Supabase", "ok");
         return true;
       } catch {
         pushToast("Could not parse JSON", "danger");
@@ -599,6 +602,31 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }
   }, [pushToast, setMode]);
 
+  /** Flush the entire local working set to Supabase, replacing remote rows. */
+  const pushToCloud = useCallback(async () => {
+    const sb = clientRef.current ?? getClient();
+    if (!sb) {
+      pushToast("No Supabase connection configured", "warn");
+      return;
+    }
+    setBackend((b) => ({ ...b, connecting: true, lastError: null }));
+    try {
+      await pushAll(sb, state);
+      prevRef.current = state;
+      setBackend((b) => ({
+        ...b,
+        connecting: false,
+        connected: true,
+        lastSyncAt: new Date().toISOString(),
+        lastError: null,
+      }));
+      pushToast("Local data pushed to Supabase", "ok");
+    } catch (e) {
+      setBackend((b) => ({ ...b, connecting: false, lastError: errorMessage(e) }));
+      pushToast("Push failed — " + errorMessage(e), "danger");
+    }
+  }, [pushToast, state]);
+
   const value = useMemo<StoreCtx>(
     () => ({
       state,
@@ -625,6 +653,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       clearData,
       exportJson,
       importJson,
+      pushToCloud,
       backend,
       connect,
       disconnect,
@@ -656,6 +685,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       clearData,
       exportJson,
       importJson,
+      pushToCloud,
       backend,
       connect,
       disconnect,

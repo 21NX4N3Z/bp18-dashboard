@@ -36,6 +36,7 @@ export function SettingsPage() {
     clearData,
     exportJson,
     importJson,
+    pushToCloud,
     pushToast,
   } = useStore();
 
@@ -218,7 +219,7 @@ export function SettingsPage() {
               <IconUpload size={16} />
               Import JSON
             </Button>
-            <Button onClick={() => pushToast("Local data pushed to Supabase", "info")} disabled={mode !== "supabase"}>
+            <Button onClick={pushToCloud} disabled={mode !== "supabase" || busy}>
               <IconCloud size={16} />
               Push local to cloud
             </Button>
