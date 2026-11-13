@@ -531,17 +531,27 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           pushToast("Connected, but the schema is missing — run supabase/schema.sql", "warn");
         }
         const loaded = await loadAll(sb);
+        const isEmpty =
+          loaded.members.length === 0 &&
+          loaded.tasks.length === 0 &&
+          loaded.bom.length === 0 &&
+          loaded.milestones.length === 0;
+        // First run on an empty database: seed it so the app is immediately usable.
+        const finalState = isEmpty ? await resetToSeedRemote(sb) : loaded;
         skipSyncRef.current += 1;
         setMode("supabase");
-        setState(loaded);
-        prevRef.current = loaded;
+        setState(finalState);
+        prevRef.current = finalState;
         setBackend((b) => ({
           ...b,
           connecting: false,
           connected: true,
           lastSyncAt: new Date().toISOString(),
         }));
-        pushToast(probe.schemaReady ? "Connected to Supabase" : "Connected — schema incomplete", "ok");
+        pushToast(
+          isEmpty ? "Connected — empty database seeded with demo data" : "Connected to Supabase",
+          "ok"
+        );
         return probe;
       } catch (e) {
         setMode("local");
