@@ -43,6 +43,7 @@ vercel deploy --prod --yes
 | **Analytics** | Status/priority/due-load breakdowns, cost by assembly and material, mass by assembly, supply-chain and manufacturing state, schedule state, team workload |
 | **Team** | Roster with roles, subsystems, per-member open/critical/done load |
 | **Files** | Drawing/CAD/report register with category filters and size totals |
+| **System** | Supabase connection, live table stats, import/export, reset and clear |
 | **TV mode** | Full-screen workshop display, auto-rotating focus, arrow-key navigation |
 
 ### Global features
@@ -61,8 +62,10 @@ vercel deploy --prod --yes
 src/
   lib/
     types.ts     domain model (Project, Member, Task, BomPart, Milestone, FileItem, Activity)
-    seed.ts      deterministic seed dataset (FSAE 2026 season)
-    store.tsx    React context store + localStorage persistence + mutation actions + toasts
+    seed.ts      seed dataset (FSAE 2026 season), ids generated per call
+    supabase.ts  connection config + client singleton
+    backend.ts   row mappers, loadAll, diff sync, reset, clear, counts, connection test
+    store.tsx    React context store + local mirror + remote sync + toasts
     derive.ts    selectors: KPIs, chart series, workload, rollups
     format.ts    labels, units, dates, relative time
   components/
@@ -73,15 +76,57 @@ src/
   pages/         one file per page
   fonts.css      self-hosted Barlow Condensed + IBM Plex Mono (latin subset, inlined)
   index.css      token-driven design system (:root light / .dark dark)
+supabase/
+  schema.sql     tables, constraints, indexes, row-level security
 scripts/
-  postbuild.mjs  single-file hardening step (see file header)
+  postbuild.mjs       single-file hardening step (see file header)
+  mock-supabase.mjs   in-memory PostgREST mock for developing without credentials
 ```
 
 ### Data model
 
 All data lives in one `DataState` object (`project`, `members`, `tasks`, `bom`, `milestones`, `files`,
-`activity`) serialised to `localStorage` under `bp18.dashboard.v2`. The seed is rebuilt whenever the
-stored payload is missing or fails validation, so a corrupted store self-heals.
+`activity`). In **local mode** it is serialised to `localStorage` under `bp18.dashboard.v2`; in
+**Supabase mode** the same object is mirrored to Postgres and every mutation is diffed and pushed.
+
+### Backend (Supabase)
+
+The optional backend is [Supabase](https://supabase.com) (Postgres + auto REST). It is free-tier
+friendly, does not sleep, and needs no server code — the SPA talks to it through `supabase-js`.
+Nothing is required for the app to run: without a connection it works entirely from `localStorage`.
+
+```
+supabase/schema.sql   tables, constraints, indexes, row-level security
+src/lib/supabase.ts   connection config (runtime entry or VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY)
+src/lib/backend.ts    row mappers, loadAll, diff sync, reset, clear, counts, connection test
+scripts/mock-supabase.mjs   in-memory PostgREST mock for developing without credentials
+```
+
+**Setup (about two minutes):**
+
+1. Create a project at [supabase.com](https://supabase.com) (free tier).
+2. Project → SQL Editor → paste `supabase/schema.sql` → Run. This creates the tables and the
+   `app_full_access` RLS policy.
+3. Project → Settings → API → copy the **Project URL** and the **anon public** key.
+4. In the dashboard: **System** page → paste both → **Save & connect**. The topbar badge turns `LIVE`.
+
+After that every create, edit and delete is pushed to Postgres within a second, and anyone opening the
+app sees the same data.
+
+**Verification without credentials:** `node scripts/mock-supabase.mjs 9999`, then connect with URL
+`http://127.0.0.1:9999` and any key. The mock implements the PostgREST subset the app uses
+(select/order/limit, upsert, delete with `in.()`, exact counts).
+
+> The anon key is public by design — it ships in the browser. What protects the data is row level
+> security. `schema.sql` grants full access to `anon` so the dashboard works out of the box; tighten
+> those policies before opening the project to anyone outside the team.
+
+### Reset and clear
+
+- **Reset to seed data** — wipes every table and re-inserts the FSAE 2026 demo dataset. Requires typing
+  `RESET`. Use this before a new season.
+- **Clear all data** — empties every table and keeps the project shell. Requires typing `CLEAR`.
+- Both are available in the System page and in the topbar data menu.
 
 ### Design system
 
@@ -91,8 +136,8 @@ Two token themes (`:root` light, `.dark` dark) drive every colour. Numbers are I
 
 ## Verification
 
-`npm run build` runs `tsc --noEmit` before Vite. The built file is a single HTML document, so it can be
-checked directly:
+`npm run build` runs `tsc --noEmit` before Vite, then a post-build hardening step, then emits one
+self-contained `dist/index.html` (CSS + JS + fonts inlined).
 
 ```bash
 # extract the inlined module bundle and syntax-check it
@@ -103,6 +148,10 @@ The UI standards gate (ui-standards skill) passes 12/12 on every page: no emoji,
 themes, 4-point grid, `:focus-visible` ring, `prefers-reduced-motion`, `role="switch"` + `aria-checked`,
 one `h1`, `tabular-nums`, no purple/glow, no bare `outline:none`, no `tabindex > 0`.
 Text contrast is ≥ 4.5:1 in both themes (verified numerically for body, support, badge, nav and status text).
+
+The Supabase data layer is verified end-to-end against `scripts/mock-supabase.mjs`: connect, load,
+mutate (upsert), activity logging, reset-to-seed, clear-all and row counts were all exercised against a
+real HTTP endpoint, not just type-checked.
 
 ## Team
 

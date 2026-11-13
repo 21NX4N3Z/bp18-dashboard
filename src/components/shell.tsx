@@ -8,6 +8,7 @@ import {
   IconChart,
   IconCheckSquare,
   IconChevronRight,
+  IconCloud,
   IconCommand,
   IconDatabase,
   IconDownload,
@@ -18,14 +19,16 @@ import {
   IconMoon,
   IconRefresh,
   IconSearch,
+  IconSettings,
   IconSun,
+  IconTrash,
   IconTv,
   IconUpload,
   IconUsers,
   IconX,
 } from "./icons";
 
-export type PageId = "overview" | "tasks" | "bom" | "analytics" | "members" | "files" | "milestones";
+export type PageId = "overview" | "tasks" | "bom" | "analytics" | "members" | "files" | "milestones" | "settings";
 
 export const PAGE_META: Record<PageId, { title: string; crumb: string; section: string }> = {
   overview: { title: "Overview", crumb: "CONTROL / OVERVIEW", section: "Control" },
@@ -35,16 +38,18 @@ export const PAGE_META: Record<PageId, { title: string; crumb: string; section: 
   members: { title: "Team", crumb: "ENGINEERING / TEAM", section: "Engineering" },
   files: { title: "Files", crumb: "ENGINEERING / FILES", section: "Engineering" },
   milestones: { title: "Milestones", crumb: "CONTROL / MILESTONES", section: "Control" },
+  settings: { title: "System", crumb: "SYSTEM / SETTINGS", section: "System" },
 };
 
-export const NAV: { id: PageId; label: string; icon: (p: { size?: number }) => ReactElement }[] = [
-  { id: "overview", label: "Overview", icon: (p) => <IconGrid {...p} /> },
-  { id: "tasks", label: "Tasks", icon: (p) => <IconCheckSquare {...p} /> },
-  { id: "milestones", label: "Milestones", icon: (p) => <IconCalendar {...p} /> },
-  { id: "bom", label: "BOM", icon: (p) => <IconLayers {...p} /> },
-  { id: "analytics", label: "Analytics", icon: (p) => <IconChart {...p} /> },
-  { id: "members", label: "Team", icon: (p) => <IconUsers {...p} /> },
-  { id: "files", label: "Files", icon: (p) => <IconFile {...p} /> },
+export const NAV: { id: PageId; label: string; icon: (p: { size?: number }) => ReactElement; section: string }[] = [
+  { id: "overview", label: "Overview", icon: (p) => <IconGrid {...p} />, section: "Control" },
+  { id: "tasks", label: "Tasks", icon: (p) => <IconCheckSquare {...p} />, section: "Control" },
+  { id: "milestones", label: "Milestones", icon: (p) => <IconCalendar {...p} />, section: "Control" },
+  { id: "bom", label: "BOM", icon: (p) => <IconLayers {...p} />, section: "Engineering" },
+  { id: "analytics", label: "Analytics", icon: (p) => <IconChart {...p} />, section: "Engineering" },
+  { id: "members", label: "Team", icon: (p) => <IconUsers {...p} />, section: "Engineering" },
+  { id: "files", label: "Files", icon: (p) => <IconFile {...p} />, section: "Engineering" },
+  { id: "settings", label: "System", icon: (p) => <IconSettings {...p} />, section: "System" },
 ];
 
 /* ================= Sidebar ================= */
@@ -80,36 +85,30 @@ export function Sidebar({
         </div>
 
         <nav className="sidebar-nav">
-          <div className="nav-section">Control</div>
-          {NAV.filter((n) => ["overview", "tasks", "milestones"].includes(n.id)).map((n) => (
-            <NavButton
-              key={n.id}
-              active={page === n.id}
-              onClick={() => {
-                onNavigate(n.id);
-                onClose();
-              }}
-              icon={n.icon({ size: 18 })}
-              label={n.label}
-              badge={n.id === "tasks" && crit > 0 ? String(crit) : undefined}
-              alert={n.id === "tasks" && crit > 0}
-            />
-          ))}
-
-          <div className="nav-section">Engineering</div>
-          {NAV.filter((n) => !["overview", "tasks", "milestones"].includes(n.id)).map((n) => (
-            <NavButton
-              key={n.id}
-              active={page === n.id}
-              onClick={() => {
-                onNavigate(n.id);
-                onClose();
-              }}
-              icon={n.icon({ size: 18 })}
-              label={n.label}
-              badge={n.id === "bom" && qcFail > 0 ? String(qcFail) : undefined}
-              alert={n.id === "bom" && qcFail > 0}
-            />
+          {["Control", "Engineering", "System"].map((section) => (
+            <div key={section}>
+              <div className="nav-section">{section}</div>
+              {NAV.filter((n) => n.section === section).map((n) => (
+                <NavButton
+                  key={n.id}
+                  active={page === n.id}
+                  onClick={() => {
+                    onNavigate(n.id);
+                    onClose();
+                  }}
+                  icon={n.icon({ size: 18 })}
+                  label={n.label}
+                  badge={
+                    n.id === "tasks" && crit > 0
+                      ? String(crit)
+                      : n.id === "bom" && qcFail > 0
+                        ? String(qcFail)
+                        : undefined
+                  }
+                  alert={n.id === "tasks" && crit > 0 ? true : n.id === "bom" && qcFail > 0}
+                />
+              ))}
+            </div>
           ))}
         </nav>
 
@@ -182,7 +181,7 @@ export function Topbar({
   onOpenTv: () => void;
   onNavigate: (p: PageId) => void;
 }) {
-  const { theme, toggleTheme, state, resetData, exportJson, importJson, pushToast } = useStore();
+  const { theme, toggleTheme, state, resetData, clearData, exportJson, importJson, pushToast, backend } = useStore();
   const [menuOpen, setMenuOpen] = useState(false);
   const [clock, setClock] = useState(() => new Date());
   const fileRef = useRef<HTMLInputElement>(null);
@@ -228,8 +227,25 @@ export function Topbar({
       <div className="topbar-spacer" />
 
       <div className="topbar-meta">
-        <span className="status-dot" aria-hidden="true" />
-        <span>LOCAL</span>
+        <button
+          className="filter-chip"
+          style={{ minHeight: 32, cursor: "pointer" }}
+          onClick={() => onNavigate("settings")}
+          aria-label="Open system settings"
+          title={
+            backend.mode === "supabase"
+              ? `Supabase ${backend.connected ? "connected" : "configured"} · ${backend.latencyMs ?? "—"} ms`
+              : "Local storage mode · click to configure Supabase"
+          }
+        >
+          <span
+            className={
+              "status-dot" + (backend.mode === "supabase" ? (backend.connected ? "" : " status-dot-warn") : " status-dot-warn")
+            }
+            aria-hidden="true"
+          />
+          {backend.mode === "supabase" ? (backend.connected ? "LIVE" : "SUPABASE") : "LOCAL"}
+        </button>
         <span className="mono">
           {clock.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
         </span>
@@ -310,7 +326,29 @@ export function Topbar({
                 }}
               >
                 <IconRefresh size={18} />
-                Reset demo data
+                Reset to seed data
+              </button>
+              <button
+                className="palette-item"
+                role="menuitem"
+                onClick={() => {
+                  setMenuOpen(false);
+                  clearData();
+                }}
+              >
+                <IconTrash size={18} />
+                Clear all data
+              </button>
+              <button
+                className="palette-item"
+                role="menuitem"
+                onClick={() => {
+                  setMenuOpen(false);
+                  onNavigate("settings");
+                }}
+              >
+                <IconSettings size={18} />
+                System settings
               </button>
               <div className="palette-empty" style={{ padding: "8px 12px" }}>
                 <span className="mono" style={{ fontSize: 11 }}>
@@ -373,6 +411,13 @@ export function CommandPalette({
       hint: "Workshop display",
       icon: <IconTv size={18} />,
       run: onOpenTv,
+    });
+    list.push({
+      id: "settings",
+      label: "System settings",
+      hint: "Supabase connection and data tools",
+      icon: <IconSettings size={18} />,
+      run: () => onNavigate("settings"),
     });
     list.push({
       id: "theme",

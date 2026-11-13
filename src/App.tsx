@@ -7,6 +7,7 @@ import { AnalyticsPage } from "./pages/analytics";
 import { MembersPage } from "./pages/members";
 import { FilesPage } from "./pages/files";
 import { MilestonesPage } from "./pages/milestones";
+import { SettingsPage } from "./pages/settings";
 import { TvPage } from "./pages/tv";
 
 function readHash(): PageId {
@@ -86,6 +87,7 @@ export function App() {
           {page === "members" ? <MembersPage /> : null}
           {page === "files" ? <FilesPage /> : null}
           {page === "milestones" ? <MilestonesPage /> : null}
+          {page === "settings" ? <SettingsPage /> : null}
         </main>
       </div>
 

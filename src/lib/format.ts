@@ -115,7 +115,17 @@ export function relTime(iso: string): string {
 }
 
 export function uid(prefix = "id"): string {
-  return prefix + "_" + Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  // fallback for non-secure contexts
+  return (
+    prefix +
+    "_" +
+    Math.random().toString(36).slice(2, 10) +
+    Date.now().toString(36) +
+    Math.random().toString(36).slice(2, 6)
+  );
 }
 
 export function pct(part: number, whole: number): number {
