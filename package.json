@@ -13,8 +13,10 @@
     "@fontsource/barlow-condensed": "^5.2.5",
     "@fontsource/ibm-plex-mono": "^5.2.5",
     "@supabase/supabase-js": "^2.119.0",
+    "@types/three": "^0.187.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.0",

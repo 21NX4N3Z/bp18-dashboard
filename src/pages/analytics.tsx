@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useStore } from "../lib/store";
 import {
   activityItems,
@@ -39,6 +40,36 @@ export function AnalyticsPage() {
   const mix = materialMixItems(state);
   const workload = memberWorkload(state);
 
+  const subsys = useMemo(() => {
+    const order = ["Chassis", "Suspension", "Powertrain", "High Voltage", "Low Voltage", "Systems", "General"];
+    const css = (n: string, fb: string) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || fb;
+    const palette = [
+      css("--accent", "#2e7bff"),
+      css("--ok", "#00d96a"),
+      css("--warn", "#ffb300"),
+      css("--danger", "#ff5a70"),
+      css("--accent-2", "#6fa8ff"),
+      "#8a9099",
+      "#126287",
+    ];
+    const map = new Map<string, { open: number; done: number }>();
+    for (const m of state.members) {
+      const key = m.subsystem || "General";
+      if (!map.has(key)) map.set(key, { open: 0, done: 0 });
+    }
+    for (const t of state.tasks) {
+      const owner = state.members.find((m) => m.id === t.assigneeId);
+      const key = owner?.subsystem || "General";
+      const e = map.get(key) ?? { open: 0, done: 0 };
+      if (t.status === "done") e.done += 1;
+      else e.open += 1;
+      map.set(key, e);
+    }
+    return order
+      .filter((o) => map.has(o))
+      .map((o, i) => ({ label: o, value: map.get(o)!.open, color: palette[i % palette.length] }));
+  }, [state.members, state.tasks]);
+
   return (
     <>
       <div className="kpi-grid">
@@ -67,6 +98,19 @@ export function AnalyticsPage() {
           </div>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader
+          title="Open work by subsystem"
+          subtitle="Where the outstanding tasks sit across the whole programme"
+          icon={<IconUsers size={18} />}
+        />
+        <Columns items={subsys} height={220} />
+        <div className="mt-16">
+          <div className="dim" style={{ fontSize: 12, marginBottom: 8 }}>Share of open work</div>
+          <Donut items={subsys} size={168} thickness={24} centerValue={String(k.openTasks)} centerLabel="OPEN" />
+        </div>
+      </Card>
 
       <div className="split-main">
         <Card>

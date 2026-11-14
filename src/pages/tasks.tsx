@@ -25,6 +25,7 @@ export function TasksPage({ openSignal = 0 }: { openSignal?: number }) {
   const [status, setStatus] = useState<"all" | TaskStatus>("all");
   const [priority, setPriority] = useState<"all" | TaskPriority>("all");
   const [assignee, setAssignee] = useState<"all" | string>("all");
+  const [subsystem, setSubsystem] = useState<"all" | string>("all");
   const [sort, setSort] = useState<"due" | "priority" | "title">("due");
   const [editing, setEditing] = useState<Task | "new" | null>(null);
   const [deleting, setDeleting] = useState<Task | null>(null);
@@ -33,12 +34,23 @@ export function TasksPage({ openSignal = 0 }: { openSignal?: number }) {
     if (openSignal > 0) setEditing("new");
   }, [openSignal]);
 
+  const subsystems = useMemo(() => {
+    const present = new Set(state.members.map((m) => m.subsystem || "General"));
+    return ["Chassis", "Suspension", "Powertrain", "High Voltage", "Low Voltage", "Systems", "General"].filter((s) =>
+      present.has(s)
+    );
+  }, [state.members]);
+
   const tasks = useMemo(() => {
     const q = query.trim().toLowerCase();
     let list = state.tasks.filter((t) => {
       if (status !== "all" && t.status !== status) return false;
       if (priority !== "all" && t.priority !== priority) return false;
       if (assignee !== "all" && t.assigneeId !== assignee) return false;
+      if (subsystem !== "all") {
+        const owner = state.members.find((m) => m.id === t.assigneeId);
+        if ((owner?.subsystem || "General") !== subsystem) return false;
+      }
       if (q && !t.title.toLowerCase().includes(q) && !t.tags.some((x) => x.toLowerCase().includes(q))) return false;
       return true;
     });
@@ -48,7 +60,7 @@ export function TasksPage({ openSignal = 0 }: { openSignal?: number }) {
       return PRIORITY_ORDER.indexOf(a.priority) - PRIORITY_ORDER.indexOf(b.priority);
     });
     return list;
-  }, [state.tasks, query, status, priority, assignee, sort]);
+  }, [state.tasks, state.members, query, status, priority, assignee, subsystem, sort]);
 
   const counts = useMemo(() => {
     const m = new Map<TaskStatus, number>();
@@ -99,6 +111,14 @@ export function TasksPage({ openSignal = 0 }: { openSignal?: number }) {
               {state.members.map((m) => (
                 <option key={m.id} value={m.id}>
                   {m.name}
+                </option>
+              ))}
+            </Select>
+            <Select value={subsystem} onChange={(e) => setSubsystem(e.target.value)} aria-label="Filter by subsystem" style={{ width: 180, minHeight: 40 }}>
+              <option value="all">All subsystems</option>
+              {subsystems.map((s) => (
+                <option key={s} value={s}>
+                  {s}
                 </option>
               ))}
             </Select>

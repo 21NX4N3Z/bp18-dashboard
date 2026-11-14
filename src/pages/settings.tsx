@@ -113,7 +113,7 @@ export function SettingsPage() {
         <Card>
           <CardHeader
             title="Supabase connection"
-            subtitle="Postgres backend — the anon key stays in this browser, never in the bundle"
+            subtitle="Postgres backend shared by the whole team — the publishable key is public by design"
             icon={<IconCloud size={18} />}
             actions={
               <Badge tone={live ? "ok" : mode === "supabase" ? "warn" : "dim"}>

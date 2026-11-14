@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { CommandPalette, PAGE_META, Sidebar, Toasts, Topbar, type PageId } from "./components/shell";
 import { OverviewPage } from "./pages/overview";
+import { SubsystemsPage } from "./pages/subsystems";
 import { TasksPage } from "./pages/tasks";
 import { BomPage } from "./pages/bom";
 import { AnalyticsPage } from "./pages/analytics";
@@ -81,6 +82,7 @@ export function App() {
 
         <main className="content" id="main-content">
           {page === "overview" ? <OverviewPage onNavigate={navigate} /> : null}
+          {page === "subsystems" ? <SubsystemsPage onNavigate={navigate} /> : null}
           {page === "tasks" ? <TasksPage openSignal={taskSignal} /> : null}
           {page === "bom" ? <BomPage /> : null}
           {page === "analytics" ? <AnalyticsPage /> : null}

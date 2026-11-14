@@ -28,27 +28,29 @@ import {
   IconX,
 } from "./icons";
 
-export type PageId = "overview" | "tasks" | "bom" | "analytics" | "members" | "files" | "milestones" | "settings";
+export type PageId = "overview" | "subsystems" | "tasks" | "bom" | "analytics" | "members" | "files" | "milestones" | "settings";
 
 export const PAGE_META: Record<PageId, { title: string; crumb: string; section: string }> = {
   overview: { title: "Overview", crumb: "CONTROL / OVERVIEW", section: "Control" },
+  subsystems: { title: "Subsystems", crumb: "TEAM / SUBSYSTEMS", section: "Team" },
   tasks: { title: "Tasks", crumb: "CONTROL / TASKS", section: "Control" },
   bom: { title: "Bill of Materials", crumb: "ENGINEERING / BOM", section: "Engineering" },
   analytics: { title: "Analytics", crumb: "ENGINEERING / ANALYTICS", section: "Engineering" },
-  members: { title: "Team", crumb: "ENGINEERING / TEAM", section: "Engineering" },
-  files: { title: "Files", crumb: "ENGINEERING / FILES", section: "Engineering" },
+  members: { title: "Team", crumb: "TEAM / ROSTER", section: "Team" },
+  files: { title: "Files", crumb: "TEAM / FILES", section: "Team" },
   milestones: { title: "Milestones", crumb: "CONTROL / MILESTONES", section: "Control" },
   settings: { title: "System", crumb: "SYSTEM / SETTINGS", section: "System" },
 };
 
 export const NAV: { id: PageId; label: string; icon: (p: { size?: number }) => ReactElement; section: string }[] = [
   { id: "overview", label: "Overview", icon: (p) => <IconGrid {...p} />, section: "Control" },
+  { id: "subsystems", label: "Subsystems", icon: (p) => <IconLayers {...p} />, section: "Team" },
   { id: "tasks", label: "Tasks", icon: (p) => <IconCheckSquare {...p} />, section: "Control" },
   { id: "milestones", label: "Milestones", icon: (p) => <IconCalendar {...p} />, section: "Control" },
   { id: "bom", label: "BOM", icon: (p) => <IconLayers {...p} />, section: "Engineering" },
   { id: "analytics", label: "Analytics", icon: (p) => <IconChart {...p} />, section: "Engineering" },
-  { id: "members", label: "Team", icon: (p) => <IconUsers {...p} />, section: "Engineering" },
-  { id: "files", label: "Files", icon: (p) => <IconFile {...p} />, section: "Engineering" },
+  { id: "members", label: "Team", icon: (p) => <IconUsers {...p} />, section: "Team" },
+  { id: "files", label: "Files", icon: (p) => <IconFile {...p} />, section: "Team" },
   { id: "settings", label: "System", icon: (p) => <IconSettings {...p} />, section: "System" },
 ];
 
@@ -80,12 +82,12 @@ export function Sidebar({
           </div>
           <div className="brand-text">
             <div className="brand-name">BP18</div>
-            <div className="brand-sub">F&amp;B CONTROL</div>
+            <div className="brand-sub">TEAM CONTROL</div>
           </div>
         </div>
 
         <nav className="sidebar-nav">
-          {["Control", "Engineering", "System"].map((section) => (
+          {["Control", "Team", "Engineering", "System"].map((section) => (
             <div key={section}>
               <div className="nav-section">{section}</div>
               {NAV.filter((n) => n.section === section).map((n) => (
