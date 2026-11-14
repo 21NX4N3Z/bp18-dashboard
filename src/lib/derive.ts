@@ -19,6 +19,7 @@ export interface Kpis {
   actualTotal: number;
   weightDelta: number;
   daysToComp: number;
+  seasonOver: boolean;
   milestoneDone: number;
   milestoneTotal: number;
   delayed: number;
@@ -66,6 +67,7 @@ export function computeKpis(state: DataState): Kpis {
     actualTotal,
     weightDelta: Math.round((actualTotal - budgetTotal) * 10) / 10,
     daysToComp: daysUntil(project.competitionDate),
+    seasonOver: daysUntil(project.competitionDate) < 0,
     milestoneDone,
     milestoneTotal: milestones.length,
     delayed: milestones.filter((m) => m.status === "delayed").length,

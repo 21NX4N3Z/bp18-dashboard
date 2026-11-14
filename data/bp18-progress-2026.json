@@ -1,8 +1,8 @@
 {
   "project": {
     "name": "BP18",
-    "season": "TSAE 2027",
-    "competitionDate": "2027-02-02T10:00:00.000Z",
+    "season": "TSAE 2026",
+    "competitionDate": "2026-02-05T10:00:00.000Z",
     "targetWeight": 29.5,
     "currentWeight": 29.537,
     "subsystemWeights": [
@@ -3460,8 +3460,8 @@
     },
     {
       "id": "5738c274-47f2-5e56-82d6-026ed4d2f61c",
-      "name": "Race (Quest 5)",
-      "dueDate": "2027-02-02T09:00:00.000Z",
+      "name": "Race (Quest 5) — TSAE Auto Challenge 2026",
+      "dueDate": "2026-02-05T09:00:00.000Z",
       "status": "pending"
     },
     {
@@ -3503,19 +3503,19 @@
     {
       "id": "cd42a24a-8b35-59c5-a785-3e5f6185470c",
       "name": "Livery design deadline",
-      "dueDate": "2027-01-14T09:00:00.000Z",
+      "dueDate": "2026-01-14T09:00:00.000Z",
       "status": "pending"
     },
     {
       "id": "4a65c5c0-aaf7-59f5-8b0f-edb5be41bae8",
       "name": "Graphics design deadline",
-      "dueDate": "2027-01-25T09:00:00.000Z",
+      "dueDate": "2026-01-25T09:00:00.000Z",
       "status": "pending"
     },
     {
       "id": "9fad579c-8135-5256-a019-e484a12d02ec",
       "name": "Final design (TSAE design presentation)",
-      "dueDate": "2027-01-25T09:00:00.000Z",
+      "dueDate": "2026-01-25T09:00:00.000Z",
       "status": "pending"
     },
     {

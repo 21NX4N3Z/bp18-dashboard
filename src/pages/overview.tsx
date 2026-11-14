@@ -89,7 +89,11 @@ export function OverviewPage({ onNavigate }: { onNavigate: (p: PageId) => void }
           </p>
           <div className="hero-facts">
             <HeroFact label="Competition" value={fmtDate(state.project.competitionDate)} />
-            <HeroFact label="Days left" value={String(k.daysToComp)} tone="warn" />
+            <HeroFact
+              label={k.seasonOver ? "Season" : "Days left"}
+              value={k.seasonOver ? "COMPLETED" : String(k.daysToComp)}
+              tone={k.seasonOver ? "ok" : "warn"}
+            />
             <HeroFact label="Team" value={String(state.members.length)} />
             <HeroFact label="Open tasks" value={String(k.openTasks)} tone={k.critOpen > 0 ? "danger" : "ok"} />
             <HeroFact label="Mass budget" value={k.actualTotal.toFixed(1) + " / " + k.budgetTotal.toFixed(1)} suffix="kg" />

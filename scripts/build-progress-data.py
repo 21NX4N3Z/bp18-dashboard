@@ -413,16 +413,16 @@ MILESTONES = [
     ("ms-design", "Design report + Cost (Quest 2)", iso(2026, 9, 18), "completed"),
     ("ms-bizplan", "Business plan (Quest 3)", iso(2026, 11, 3), "completed"),
     ("ms-ansys", "Ansys simulation (Quest 4)", iso(2026, 11, 27), "in-progress"),
-    ("ms-race", "Race (Quest 5)", iso(2027, 2, 2), "pending"),
+    ("ms-race", "Race (Quest 5) — TSAE Auto Challenge 2026", iso(2026, 2, 5), "pending"),
     ("ms-cost-drw", "Cost + drawing deadline", iso(2026, 9, 30), "completed"),
     ("ms-bom", "BOM deadline", iso(2026, 10, 2), "completed"),
     ("ms-yellow", "Yellow paper summit", iso(2026, 11, 20), "at-risk"),
     ("ms-pcb-asm", "Complete PCB assembly", iso(2026, 12, 4), "pending"),
     ("ms-pcb-test", "PCB unit test", iso(2026, 12, 18), "pending"),
     ("ms-brd", "BRD (powertrain)", iso(2026, 11, 27), "pending"),
-    ("ms-livery", "Livery design deadline", iso(2027, 1, 14), "pending"),
-    ("ms-graphics", "Graphics design deadline", iso(2027, 1, 25), "pending"),
-    ("ms-final-design", "Final design (TSAE design presentation)", iso(2027, 1, 25), "pending"),
+    ("ms-livery", "Livery design deadline", iso(2026, 1, 14), "pending"),
+    ("ms-graphics", "Graphics design deadline", iso(2026, 1, 25), "pending"),
+    ("ms-final-design", "Final design (TSAE design presentation)", iso(2026, 1, 25), "pending"),
     ("ms-bms-full", "7/7 BMS integration complete", iso(2026, 9, 6), "delayed"),
 ]
 
@@ -468,8 +468,8 @@ files = [
 # --------------------------------------------------------------------------
 project = {
     "name": "BP18",
-    "season": "TSAE 2027",
-    "competitionDate": iso(2027, 2, 2, 10),
+    "season": "TSAE 2026",
+    "competitionDate": iso(2026, 2, 5, 10),
     "targetWeight": 29.5,
     "currentWeight": 29.537,
     "subsystemWeights": [

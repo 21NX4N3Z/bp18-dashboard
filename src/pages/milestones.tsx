@@ -62,7 +62,7 @@ export function MilestonesPage() {
         <Card className="kpi">
           <div className="kpi-label">Competition</div>
           <div className="kpi-value">{fmtDate(state.project.competitionDate)}</div>
-          <div className="kpi-foot"><span className="dim">{k.daysToComp} days remaining</span></div>
+          <div className="kpi-foot"><span className="dim">{k.seasonOver ? "season completed" : k.daysToComp + " days remaining"}</span></div>
         </Card>
       </div>
 

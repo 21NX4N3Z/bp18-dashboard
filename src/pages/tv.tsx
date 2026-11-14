@@ -52,7 +52,7 @@ export function TvPage({ onExit }: { onExit: () => void }) {
         <div style={{ textAlign: "right" }}>
           <div className="tv-clock mono">{clock.toLocaleTimeString("en-GB")}</div>
           <div className="mono" style={{ fontSize: 14, color: "var(--text-3)", letterSpacing: "0.16em" }}>
-            T-MINUS {k.daysToComp} DAYS
+            {k.seasonOver ? "SEASON COMPLETED" : `T-MINUS ${k.daysToComp} DAYS`}
           </div>
         </div>
       </div>
