@@ -437,10 +437,9 @@ export function OverviewPage({ onNavigate }: { onNavigate: (p: PageId) => void }
         .hero { position: relative; display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--surface); overflow: hidden; min-height: 328px; }
         .hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
         .hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
-          background: linear-gradient(90deg, var(--surface) 0%, rgba(0,0,0,0) 72%);
-          background: linear-gradient(90deg, var(--surface) 0%, var(--surface) 32%, color-mix(in srgb, var(--surface) 68%, transparent) 54%, rgba(0,0,0,0) 82%);
+          background: linear-gradient(90deg, var(--surface) 0%, var(--surface) 42%, color-mix(in srgb, var(--surface) 80%, transparent) 62%, rgba(0,0,0,0) 88%);
         }
-        .hero-left { position: relative; z-index: 2; flex: 1 1 420px; min-width: 0; }
+        .hero-left { position: relative; z-index: 2; flex: 1 1 420px; max-width: 480px; min-width: 0; }
         .hero-right { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 16px; }
         .hero-eyebrow { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
         .hero-title { font-size: 44px; font-weight: 700; letter-spacing: 0.04em; margin: 8px 0 0; }

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import { PLYLoader } from "three/addons/loaders/PLYLoader.js";
 
 /**
  * Hero backdrop: the team's real BP18 SolidWorks assembly when it can be
@@ -14,7 +14,7 @@ import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
  * prefers-reduced-motion and paused when the canvas is off-screen.
  */
 
-const MODEL_URL = "/models/bp18_web.obj";
+const MODEL_URL = "/models/bp18_web.ply";
 
 type Mat = { color: number; metal?: number; rough?: number; emissive?: number; emissiveIntensity?: number };
 
@@ -47,8 +47,12 @@ export function CarScene({ className }: { className?: string }) {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
-    camera.position.set(3.3, 1.75, 4.1);
-    camera.lookAt(-1.15, 0.38, 0);
+    camera.position.set(3.4, 1.8, 4.0);
+    // aiming below the car lifts the whole scene so the wheels and the grid
+    // under them stay inside the frame
+    // aiming below and left of the car pushes it into the right-hand third of
+    // the frame, clear of the headline and lede
+    camera.lookAt(-2.2, -0.5, 0);
 
     /* ---------------- palette (theme aware) ---------------- */
 
@@ -68,11 +72,15 @@ export function CarScene({ className }: { className?: string }) {
 
     /* ---------------- lights ---------------- */
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
-    scene.add(new THREE.HemisphereLight(0xe8eef7, 0x14171c, 2.1));
-    const key = new THREE.DirectionalLight(0xffffff, 3.2);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.85));
+    scene.add(new THREE.HemisphereLight(0xe8eef7, 0x14171c, 2.4));
+    const key = new THREE.DirectionalLight(0xffffff, 4.2);
     key.position.set(4, 6, 3);
     scene.add(key);
+    // a soft light from the viewer's side so the bodywork never falls to black
+    const front = new THREE.DirectionalLight(0xffffff, 1.6);
+    front.position.set(2.5, 1.6, 4.5);
+    scene.add(front);
     const rim = new THREE.DirectionalLight(accent, 2.4);
     rim.position.set(-5, 2.5, -4);
     scene.add(rim);
@@ -103,6 +111,10 @@ export function CarScene({ className }: { className?: string }) {
 
     const car = new THREE.Group();
     scene.add(car);
+    // the procedural stand-in lives in its own group so it can be hidden
+    // without also hiding the real assembly that is added to `car` later
+    const standIn = new THREE.Group();
+    car.add(standIn);
 
     const box = (
       w: number,
@@ -119,7 +131,7 @@ export function CarScene({ className }: { className?: string }) {
       const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
       mesh.position.set(x, y, z);
       mesh.rotation.set(rx, ry, rz);
-      car.add(mesh);
+      standIn.add(mesh);
       return mesh;
     };
 
@@ -139,7 +151,7 @@ export function CarScene({ className }: { className?: string }) {
       const mesh = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, seg), mat);
       mesh.position.set(x, y, z);
       mesh.rotation.set(rx, ry, rz);
-      car.add(mesh);
+      standIn.add(mesh);
       return mesh;
     };
 
@@ -166,7 +178,7 @@ export function CarScene({ className }: { className?: string }) {
     const halo = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.028, 8, 20, Math.PI), carbon);
     halo.position.set(0, 0.78, -0.06);
     halo.rotation.set(Math.PI / 2, 0, Math.PI);
-    car.add(halo);
+    standIn.add(halo);
     box(0.05, 0.2, 0.05, carbon, 0, 0.74, -0.34);
 
     // front wing
@@ -199,7 +211,7 @@ export function CarScene({ className }: { className?: string }) {
       const nut = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.16, r * 0.16, w + 0.04, 10), accentMat);
       nut.rotation.z = Math.PI / 2;
       g.add(nut);
-      car.add(g);
+      standIn.add(g);
       wheels.push(g);
     };
     wheel(0.62, -0.82, 0.27, 0.28);
@@ -214,7 +226,7 @@ export function CarScene({ className }: { className?: string }) {
       const mesh = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, len, 6), rimMat);
       mesh.position.copy(a).add(b).multiplyScalar(0.5);
       mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize());
-      car.add(mesh);
+      standIn.add(mesh);
     };
     for (const sx of [1, -1]) {
       arm(sx * 0.42, 0.42, -0.72, sx * 0.62, 0.46, -0.82);
@@ -223,31 +235,28 @@ export function CarScene({ className }: { className?: string }) {
       arm(sx * 0.44, 0.24, 0.72, sx * 0.64, 0.22, 0.86);
     }
 
-    // everything above is the stand-in; it is hidden once the real model lands
-    const standIn = car;
-
     /* ---------------- real assembly ---------------- */
 
     const applyRealModel = (obj: THREE.Object3D) => {
       const bounds = new THREE.Box3().setFromObject(obj);
       const size = bounds.getSize(new THREE.Vector3());
-      const center = bounds.getCenter(new THREE.Vector3());
       const longest = Math.max(size.x, size.y, size.z) || 1;
-      const scale = 3.4 / longest;
+      const scale = 1.6 / longest;
 
       obj.scale.setScalar(scale);
-      // SolidWorks is Z-up, three.js is Y-up
-      obj.rotation.x = -Math.PI / 2;
-      obj.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
+      // The assembly is authored Y-up with the car's length along Z, which is
+      // already three.js's convention, so no axis swap is needed. Drop it so
+      // the lowest point sits on the ground plane.
+      obj.position.set(
+        -(bounds.min.x + size.x / 2) * scale,
+        -bounds.min.y * scale,
+        -(bounds.min.z + size.z / 2) * scale
+      );
 
-      const paint = std({ color: 0x353c45, metal: 0.78, rough: 0.3 });
-      const trim = std({ color: accent.getHex(), metal: 0.45, rough: 0.32 });
-      let i = 0;
+      const paint = std({ color: 0x616c78, metal: 0.62, rough: 0.36 });
       obj.traverse((child) => {
         const mesh = child as THREE.Mesh;
-        if (!mesh.isMesh) return;
-        mesh.material = i % 7 === 0 ? trim : paint;
-        i += 1;
+        if (mesh.isMesh) mesh.material = paint;
       });
 
       car.add(obj);
@@ -256,9 +265,9 @@ export function CarScene({ className }: { className?: string }) {
     };
 
     try {
-      new OBJLoader().load(
+      new PLYLoader().load(
         MODEL_URL,
-        applyRealModel,
+        (geometry: THREE.BufferGeometry) => applyRealModel(new THREE.Mesh(geometry)),
         undefined,
         () => {
           /* model missing or blocked: the stand-in stays */
@@ -300,9 +309,9 @@ export function CarScene({ className }: { className?: string }) {
       car.rotation.y = t * 0.32;
       car.position.y = Math.sin(t * 0.9) * 0.018;
       for (const w of wheels) w.rotation.x = t * 1.6;
-      camera.position.x += (3.3 + pointerX * 0.45 - camera.position.x) * 0.04;
-      camera.position.y += (1.75 - pointerY * 0.3 - camera.position.y) * 0.04;
-      camera.lookAt(-1.15, 0.38, 0);
+      camera.position.x += (3.4 + pointerX * 0.45 - camera.position.x) * 0.04;
+      camera.position.y += (1.8 - pointerY * 0.3 - camera.position.y) * 0.04;
+      camera.lookAt(-2.2, -0.5, 0);
       renderer.render(scene, camera);
       if (!reduced) raf = requestAnimationFrame(tick);
     };

@@ -446,7 +446,7 @@ export function CommandPalette({
     });
     list.push({
       id: "reset",
-      label: "Reset demo data",
+      label: "Reset programme data",
       hint: "Restore seed dataset",
       icon: <IconRefresh size={18} />,
       run: resetData,

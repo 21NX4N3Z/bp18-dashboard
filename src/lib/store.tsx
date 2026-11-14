@@ -552,7 +552,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           lastSyncAt: new Date().toISOString(),
         }));
         pushToast(
-          isEmpty ? "Connected — empty database seeded with demo data" : "Connected to Supabase",
+          isEmpty ? "Connected — empty database seeded with the BP18 programme" : "Connected to Supabase",
           "ok"
         );
         return probe;
