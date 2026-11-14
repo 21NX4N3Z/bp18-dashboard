@@ -1,14 +1,20 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 
 /**
- * Procedural low-poly Formula Student car, rendered as a living backdrop.
+ * Hero backdrop: the team's real BP18 SolidWorks assembly when it can be
+ * loaded, otherwise a procedural low-poly stand-in.
  *
- * Deliberately dependency-light beyond three.js: the car is built from
- * primitives so the whole scene ships inside the single-file bundle and never
- * needs an external model fetch. Motion is a slow turntable plus pointer
- * parallax; it is fully disabled under prefers-reduced-motion.
+ * The assembly is exported from SolidWorks as STL, decimated to a web-sized
+ * mesh with pymeshlab and shipped as a static asset in public/models. It is
+ * Z-up and in millimetres, so it is rotated and scaled to metres on load.
+ *
+ * Motion is a slow turntable plus pointer parallax; fully disabled under
+ * prefers-reduced-motion and paused when the canvas is off-screen.
  */
+
+const MODEL_URL = "/models/bp18_web.obj";
 
 type Mat = { color: number; metal?: number; rough?: number; emissive?: number; emissiveIntensity?: number };
 
@@ -42,8 +48,6 @@ export function CarScene({ className }: { className?: string }) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
     camera.position.set(3.3, 1.75, 4.1);
-    // looking left of the car pushes it into the right-hand third of the frame,
-    // clear of the headline copy
     camera.lookAt(-1.15, 0.38, 0);
 
     /* ---------------- palette (theme aware) ---------------- */
@@ -61,7 +65,6 @@ export function CarScene({ className }: { className?: string }) {
     const tireMat = std({ color: 0x17191d, metal: 0.15, rough: 0.88 });
     const rimMat = std({ color: 0xc7ced6, metal: 1, rough: 0.18 });
     const glassMat = std({ color: 0x1d2530, metal: 0.9, rough: 0.1 });
-    const edgeMat = new THREE.LineBasicMaterial({ color: accent, transparent: true, opacity: 0.22 });
 
     /* ---------------- lights ---------------- */
 
@@ -111,20 +114,12 @@ export function CarScene({ className }: { className?: string }) {
       z = 0,
       rx = 0,
       ry = 0,
-      rz = 0,
-      edges = false
+      rz = 0
     ) => {
-      const geo = new THREE.BoxGeometry(w, h, d);
-      const mesh = new THREE.Mesh(geo, mat);
+      const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
       mesh.position.set(x, y, z);
       mesh.rotation.set(rx, ry, rz);
       car.add(mesh);
-      if (edges) {
-        const line = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 24), edgeMat);
-        line.position.copy(mesh.position);
-        line.rotation.copy(mesh.rotation);
-        car.add(line);
-      }
       return mesh;
     };
 
@@ -156,21 +151,16 @@ export function CarScene({ className }: { className?: string }) {
     // monocoque / tub
     box(0.86, 0.5, 1.7, bodyMat, 0, 0.42, 0.06);
     box(0.9, 0.06, 1.5, carbon, 0, 0.68, 0.1);
-    // nose (tapered)
     cyl(0.09, 0.3, 1.25, 4, bodyMat, 0, 0.33, -0.95, Math.PI / 2, 0, Math.PI / 4);
     box(0.3, 0.16, 0.5, bodyMat, 0, 0.26, -1.42);
-    // cockpit opening
     box(0.62, 0.1, 0.72, glassMat, 0, 0.66, 0.06);
-    // headrest + airbox
     box(0.4, 0.16, 0.26, carbon, 0, 0.72, 0.42);
     box(0.26, 0.34, 0.44, bodyMat, 0, 0.78, 0.78);
     cyl(0.1, 0.13, 0.2, 12, carbon, 0, 0.98, 0.78);
-    // sidepods + inlets
     box(0.26, 0.34, 1.15, bodyMat, 0.6, 0.4, 0.62);
     box(0.26, 0.34, 1.15, bodyMat, -0.6, 0.4, 0.62);
     box(0.28, 0.2, 0.12, glassMat, 0.6, 0.44, 0.08);
     box(0.28, 0.2, 0.12, glassMat, -0.6, 0.44, 0.08);
-    // mirrors + halo
     box(0.12, 0.05, 0.06, carbon, 0.52, 0.66, 0.02);
     box(0.12, 0.05, 0.06, carbon, -0.52, 0.66, 0.02);
     const halo = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.028, 8, 20, Math.PI), carbon);
@@ -221,19 +211,61 @@ export function CarScene({ className }: { className?: string }) {
       const a = new THREE.Vector3(x1, y1, z1);
       const b = new THREE.Vector3(x2, y2, z2);
       const len = a.distanceTo(b);
-      const geo = new THREE.CylinderGeometry(0.012, 0.012, len, 6);
-      const mesh = new THREE.Mesh(geo, rimMat);
+      const mesh = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, len, 6), rimMat);
       mesh.position.copy(a).add(b).multiplyScalar(0.5);
       mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize());
       car.add(mesh);
     };
     for (const sx of [1, -1]) {
-      // front double wishbone
       arm(sx * 0.42, 0.42, -0.72, sx * 0.62, 0.46, -0.82);
       arm(sx * 0.42, 0.24, -0.66, sx * 0.62, 0.2, -0.82);
-      // rear double wishbone
       arm(sx * 0.44, 0.44, 0.78, sx * 0.64, 0.5, 0.86);
       arm(sx * 0.44, 0.24, 0.72, sx * 0.64, 0.22, 0.86);
+    }
+
+    // everything above is the stand-in; it is hidden once the real model lands
+    const standIn = car;
+
+    /* ---------------- real assembly ---------------- */
+
+    const applyRealModel = (obj: THREE.Object3D) => {
+      const bounds = new THREE.Box3().setFromObject(obj);
+      const size = bounds.getSize(new THREE.Vector3());
+      const center = bounds.getCenter(new THREE.Vector3());
+      const longest = Math.max(size.x, size.y, size.z) || 1;
+      const scale = 3.4 / longest;
+
+      obj.scale.setScalar(scale);
+      // SolidWorks is Z-up, three.js is Y-up
+      obj.rotation.x = -Math.PI / 2;
+      obj.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
+
+      const paint = std({ color: 0x353c45, metal: 0.78, rough: 0.3 });
+      const trim = std({ color: accent.getHex(), metal: 0.45, rough: 0.32 });
+      let i = 0;
+      obj.traverse((child) => {
+        const mesh = child as THREE.Mesh;
+        if (!mesh.isMesh) return;
+        mesh.material = i % 7 === 0 ? trim : paint;
+        i += 1;
+      });
+
+      car.add(obj);
+      standIn.visible = false;
+      wheels.length = 0; // a merged mesh has no separate wheels to spin
+    };
+
+    try {
+      new OBJLoader().load(
+        MODEL_URL,
+        applyRealModel,
+        undefined,
+        () => {
+          /* model missing or blocked: the stand-in stays */
+        }
+      );
+    } catch {
+      /* loader unavailable: stand-in stays */
     }
 
     /* ---------------- interaction + animation ---------------- */
@@ -287,13 +319,11 @@ export function CarScene({ className }: { className?: string }) {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
-    // keep the accent in sync with the theme toggle
     const themeObserver = new MutationObserver(() => {
       accentMat.color.copy(accent);
       accentMat.emissive.copy(accent);
       rim.color.copy(accent);
       fill.color.copy(accent);
-      edgeMat.color.copy(accent);
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "class"] });
 

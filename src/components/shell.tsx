@@ -67,7 +67,7 @@ export function Sidebar({
   open: boolean;
   onClose: () => void;
 }) {
-  const { state, theme, toggleTheme, pushToast } = useStore();
+  const { state, theme, toggleTheme, pushToast, backend } = useStore();
   const openTasks = state.tasks.filter((t) => t.status !== "done").length;
   const crit = state.tasks.filter((t) => t.priority === "critical" && t.status !== "done").length;
   const qcFail = state.bom.filter((b) => b.vendorStatus === "qc_failed").length;
@@ -125,9 +125,9 @@ export function Sidebar({
             description={theme === "dark" ? "Machine dark" : "Daylight"}
           />
           <div className="sidebar-foot-row">
-            <span className="badge badge-dim">
+            <span className={"badge " + (backend.mode === "supabase" ? "badge-ok" : "badge-dim")}>
               <IconDatabase size={12} strokeWidth={2.2} />
-              LOCAL STORE
+              {backend.mode === "supabase" ? "SHARED DB" : "LOCAL STORE"}
             </span>
             <span className="badge badge-ok">
               <IconCheckSquare size={12} strokeWidth={2.2} />

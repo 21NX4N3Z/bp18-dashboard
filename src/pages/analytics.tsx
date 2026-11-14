@@ -170,7 +170,7 @@ export function AnalyticsPage() {
           <HBars items={workload.map((w) => ({ label: w.member.name, value: w.open }))} />
         </Card>
         <Card>
-          <CardHeader title="Activity mix" subtitle="Local event log by type" icon={<IconZap size={18} />} />
+          <CardHeader title="Activity mix" subtitle="Shared event log by type" icon={<IconZap size={18} />} />
           <HBars items={activity} />
           <div className="mt-16">
             <div className="dim" style={{ fontSize: 12, marginBottom: 8 }}>Milestone completion</div>

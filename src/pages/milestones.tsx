@@ -70,7 +70,7 @@ export function MilestonesPage() {
         <div style={{ padding: 20 }}>
           <CardHeader
             title="Season timeline"
-            subtitle="Kickoff through endurance — status is live from the local store"
+            subtitle="Kickoff through endurance — status is live from the shared database"
             icon={<IconCalendar size={18} />}
             actions={
               <Button variant="primary" onClick={() => setEditing("new")}>

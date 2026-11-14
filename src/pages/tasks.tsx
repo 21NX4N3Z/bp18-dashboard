@@ -340,8 +340,8 @@ export function TasksPage({ openSignal = 0 }: { openSignal?: number }) {
         }
       >
         <p style={{ fontSize: 16 }}>
-          Permanently delete <strong>{deleting?.title}</strong>? This removes it from the local store and writes an
-          entry to the activity log.
+          Permanently delete <strong>{deleting?.title}</strong>? This removes it from the shared database and
+          writes an entry to the activity log.
         </p>
       </Modal>
     </>

@@ -428,7 +428,7 @@ export function OverviewPage({ onNavigate }: { onNavigate: (p: PageId) => void }
           </div>
         </Card>
         <Card>
-          <CardHeader title="Activity mix" subtitle="Events by type in the local log" icon={<IconClock size={18} />} />
+          <CardHeader title="Activity mix" subtitle="Events by type across the programme" icon={<IconClock size={18} />} />
           <HBars items={activityItems(state)} />
         </Card>
       </div>

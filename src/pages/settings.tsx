@@ -303,14 +303,14 @@ export function SettingsPage() {
       <Card style={{ borderColor: "color-mix(in srgb, var(--danger) 32%, transparent)" }}>
         <CardHeader
           title="Danger zone"
-          subtitle="These actions wipe data — reset reseeds, clear empties everything"
+          subtitle="Reset restores the BP18 programme. Clear empties every table."
           icon={<IconAlert size={18} />}
         />
         <div className="flex gap-16 wrap">
           <div className="grow" style={{ minWidth: 240 }}>
             <div className="table-strong" style={{ fontSize: 16 }}>Reset to seed data</div>
             <div className="card-sub" style={{ marginTop: 4 }}>
-              Deletes every row and re-inserts the FSAE 2026 demo dataset. Use before a new season.
+              Deletes every row and re-inserts the real BP18 programme dataset. Use before a new season.
             </div>
           </div>
           <Button variant="danger" onClick={() => setResetOpen(true)}>
@@ -323,7 +323,7 @@ export function SettingsPage() {
           <div className="grow" style={{ minWidth: 240 }}>
             <div className="table-strong" style={{ fontSize: 16 }}>Clear all data</div>
             <div className="card-sub" style={{ marginTop: 4 }}>
-              Empties every table and leaves the project shell. Nothing comes back.
+              Empties every table. The app reseeds the BP18 programme the next time it loads, so a wipe is recoverable.
             </div>
           </div>
           <Button variant="danger" onClick={() => setClearOpen(true)}>
@@ -366,7 +366,7 @@ export function SettingsPage() {
       >
         <p style={{ fontSize: 16 }}>
           This deletes <strong>all rows</strong> {mode === "supabase" ? "in Supabase " : ""}and re-inserts
-          the FSAE 2026 demo dataset. Your real data will be gone.
+          the real BP18 programme dataset. Anything you changed will be gone.
         </p>
         <Field label='Type RESET to confirm' hint="Case sensitive">
           <Input value={confirmText} onChange={(e) => setConfirmText(e.target.value)} placeholder="RESET" autoFocus />
@@ -403,8 +403,8 @@ export function SettingsPage() {
         }
       >
         <p style={{ fontSize: 16 }}>
-          Every table {mode === "supabase" ? "in Supabase " : ""}is emptied. The project shell stays so you
-          can start fresh. This cannot be undone.
+          Every table {mode === "supabase" ? "in Supabase " : ""}is emptied. The project shell stays, and the
+          app reseeds the BP18 programme the next time it loads.
         </p>
         <Field label='Type CLEAR to confirm' hint="Case sensitive">
           <Input value={confirmText} onChange={(e) => setConfirmText(e.target.value)} placeholder="CLEAR" autoFocus />
